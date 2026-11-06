@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PointAndShoot : MonoBehaviour
 {
+    [Header("CameraSettings")]
+    [SerializeField] private Camera mainCamera;
+
     [Header("Weapon Settings")]
     [SerializeField] private GameObject crosshairs;
     [SerializeField] private GameObject weapon;
@@ -24,24 +27,25 @@ public class PointAndShoot : MonoBehaviour
     public BulletStats glassBullet;
     public BulletStats metalBullet;
 
-    private Camera mainCamera;
     private Vector3 target;
     private bool canShoot;
     private SpriteRenderer crosshairsSR;
     private BulletStats bulletType;
+    private MeshRenderer weaponRender;
 
     void Start()
     {
         SetBullets();
-        mainCamera = GetComponent<Camera>();
         Cursor.visible = false;
         canShoot = true;
         crosshairsSR = crosshairs.GetComponent<SpriteRenderer>();
+        weaponRender = weapon.GetComponent<MeshRenderer>();
 
         crosshairsSR.color = Color.red;
         bulletType = plasticBullet;
         textMaterial.text = "Plástico";
         textMaterial.color = Color.red;
+        weaponRender.material.color = Color.red;
     }
 
     void SetBullets()
@@ -86,6 +90,7 @@ public class PointAndShoot : MonoBehaviour
             bulletType = plasticBullet;
             textMaterial.text = "Plástico";
             textMaterial.color = Color.red;
+            weaponRender.material.color = Color.red;
             Debug.Log("Mudou para a arma Coleta Plástico");
         }
         else if (Input.GetKeyDown(KeyCode.A))
@@ -94,6 +99,7 @@ public class PointAndShoot : MonoBehaviour
             bulletType = paperBullet;
             textMaterial.text = "Papel";
             textMaterial.color = Color.blue;
+            weaponRender.material.color = Color.blue;
             Debug.Log("Mudou para a arma Coleta Papel");
         }
         else if (Input.GetKeyDown(KeyCode.V))
@@ -102,6 +108,7 @@ public class PointAndShoot : MonoBehaviour
             bulletType = glassBullet;
             textMaterial.text = "Vidro";
             textMaterial.color = Color.green;
+            weaponRender.material.color = Color.green;
             Debug.Log("Mudou para a arma Coleta Vidro");
         }
         else if (Input.GetKeyDown(KeyCode.M))
@@ -110,6 +117,7 @@ public class PointAndShoot : MonoBehaviour
             bulletType = metalBullet;
             textMaterial.text = "Metal";
             textMaterial.color = Color.yellow;
+            weaponRender.material.color = Color.yellow;
             Debug.Log("Mudou para a arma Coleta Metal");
         }
     }
