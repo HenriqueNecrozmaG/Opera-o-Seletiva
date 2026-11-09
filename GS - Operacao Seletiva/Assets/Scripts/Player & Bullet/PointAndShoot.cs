@@ -10,7 +10,9 @@ public class PointAndShoot : MonoBehaviour
     [Header("Weapon Settings")]
     [SerializeField] private GameObject crosshairs;
     [SerializeField] private GameObject weapon;
-    [SerializeField] private float sensibility;
+    [SerializeField] private float sensibilityX;
+    [SerializeField] private float sensibilityY;
+    [SerializeField] private float yOffset;
 
     [Header("Bullet Settings")]
     [SerializeField] private BulletStats bulletStats;
@@ -73,10 +75,10 @@ public class PointAndShoot : MonoBehaviour
 
     void Update()
     {
-        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, +10));
+        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y + yOffset, +10f));
         crosshairs.transform.position = target;
 
-        weapon.transform.rotation = Quaternion.Euler(-target.y * sensibility, target.x * sensibility, 0.0f);
+        weapon.transform.rotation = Quaternion.Euler(-target.y * sensibilityY, target.x * sensibilityX, 0.0f);
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
@@ -84,41 +86,37 @@ public class PointAndShoot : MonoBehaviour
             StartCoroutine(shootCooldown());
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             crosshairsSR.color = Color.red;
             bulletType = plasticBullet;
             textMaterial.text = "Plástico";
             textMaterial.color = Color.red;
             weaponRender.material.color = Color.red;
-            Debug.Log("Mudou para a arma Coleta Plástico");
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             crosshairsSR.color = Color.blue;
             bulletType = paperBullet;
             textMaterial.text = "Papel";
             textMaterial.color = Color.blue;
             weaponRender.material.color = Color.blue;
-            Debug.Log("Mudou para a arma Coleta Papel");
         }
-        else if (Input.GetKeyDown(KeyCode.V))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             crosshairsSR.color = Color.green;
             bulletType = glassBullet;
             textMaterial.text = "Vidro";
             textMaterial.color = Color.green;
             weaponRender.material.color = Color.green;
-            Debug.Log("Mudou para a arma Coleta Vidro");
         }
-        else if (Input.GetKeyDown(KeyCode.M))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             crosshairsSR.color = Color.yellow;
             bulletType = metalBullet;
             textMaterial.text = "Metal";
             textMaterial.color = Color.yellow;
             weaponRender.material.color = Color.yellow;
-            Debug.Log("Mudou para a arma Coleta Metal");
         }
     }
 

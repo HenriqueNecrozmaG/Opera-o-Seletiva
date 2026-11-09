@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class BulletInstance : MonoBehaviour
@@ -33,19 +32,19 @@ public class BulletInstance : MonoBehaviour
     {
         if (other.gameObject.tag == "PlasticMonster" && stats.materialIndex == 0)
         {
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyScript>().Damage();
         }
         else if (other.gameObject.tag == "PaperMonster" && stats.materialIndex == 1)
         {
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyScript>().Damage();
         }
         else if (other.gameObject.tag == "GlassMonster" && stats.materialIndex == 2)
         {
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyScript>().Damage();
         }
         else if (other.gameObject.tag == "MetalMonster" && stats.materialIndex == 3)
         {
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyScript>().Damage();
         }
 
         Destroy(gameObject);

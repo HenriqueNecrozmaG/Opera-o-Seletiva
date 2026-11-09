@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -334355672760322375}
   - component: {fileID: -467770047015989398}
   m_Layer: 0
-  m_Name: PaperMonster
+  m_Name: PaperMonsterPrototype
   m_TagString: PaperMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   speed: 5
+  health: 3
