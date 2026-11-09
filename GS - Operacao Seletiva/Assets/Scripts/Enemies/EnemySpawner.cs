@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void Spawn(EnemyType type)
     {
-        factory.CreateEnemy(type, new Vector3(Random.Range(-40f, 40f), -0.9f, 85f));
+        factory.CreateEnemy(type, new Vector3(Random.Range(-25f, 25f), -0.9f, 72f));
     }
     
     void Update()
@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnCoroutine()
     {
         int spawnIndex = 0;
-        
+
         yield return new WaitForSeconds(spawnTime);
 
         spawnIndex = Random.Range(0, 4);

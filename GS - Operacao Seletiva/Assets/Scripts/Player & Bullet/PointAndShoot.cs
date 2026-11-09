@@ -12,7 +12,6 @@ public class PointAndShoot : MonoBehaviour
     [SerializeField] private GameObject weapon;
     [SerializeField] private float sensibilityX;
     [SerializeField] private float sensibilityY;
-    [SerializeField] private float yOffset;
 
     [Header("Bullet Settings")]
     [SerializeField] private BulletStats bulletStats;
@@ -20,9 +19,6 @@ public class PointAndShoot : MonoBehaviour
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float timeToDestroy;
     [SerializeField] private float cooldown;
-
-    [Header("UI Settings")]
-    [SerializeField] private TextMeshProUGUI textMaterial;
 
     public BulletStats plasticBullet;
     public BulletStats paperBullet;
@@ -45,8 +41,7 @@ public class PointAndShoot : MonoBehaviour
 
         crosshairsSR.color = Color.red;
         bulletType = plasticBullet;
-        textMaterial.text = "Plástico";
-        textMaterial.color = Color.red;
+        GameFacade.Instance.UpdateUIMaterialText("Plástico", Color.red);
         weaponRender.material.color = Color.red;
     }
 
@@ -75,7 +70,7 @@ public class PointAndShoot : MonoBehaviour
 
     void Update()
     {
-        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y + yOffset, +10f));
+        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, +10f));
         crosshairs.transform.position = target;
 
         weapon.transform.rotation = Quaternion.Euler(-target.y * sensibilityY, target.x * sensibilityX, 0.0f);
@@ -90,32 +85,28 @@ public class PointAndShoot : MonoBehaviour
         {
             crosshairsSR.color = Color.red;
             bulletType = plasticBullet;
-            textMaterial.text = "Plástico";
-            textMaterial.color = Color.red;
+            GameFacade.Instance.UpdateUIMaterialText("Plástico", Color.red);
             weaponRender.material.color = Color.red;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             crosshairsSR.color = Color.blue;
             bulletType = paperBullet;
-            textMaterial.text = "Papel";
-            textMaterial.color = Color.blue;
+            GameFacade.Instance.UpdateUIMaterialText("Papel", Color.blue);
             weaponRender.material.color = Color.blue;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             crosshairsSR.color = Color.green;
             bulletType = glassBullet;
-            textMaterial.text = "Vidro";
-            textMaterial.color = Color.green;
+            GameFacade.Instance.UpdateUIMaterialText("Vidro", Color.green);
             weaponRender.material.color = Color.green;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             crosshairsSR.color = Color.yellow;
             bulletType = metalBullet;
-            textMaterial.text = "Metal";
-            textMaterial.color = Color.yellow;
+            GameFacade.Instance.UpdateUIMaterialText("Metal", Color.yellow);
             weaponRender.material.color = Color.yellow;
         }
     }

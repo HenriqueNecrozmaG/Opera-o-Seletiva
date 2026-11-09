@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,11 +10,18 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage()
     {
-        
+        currentHealth--;
+        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth);
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            gameObject.SetActive(false);
+        }
     }
 }

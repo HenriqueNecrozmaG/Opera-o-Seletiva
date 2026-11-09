@@ -37,6 +37,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage();
             Destroy(gameObject);
         }
     }
