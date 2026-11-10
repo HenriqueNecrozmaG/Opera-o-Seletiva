@@ -9,7 +9,10 @@ public class PlayerShoot : MonoBehaviour
 
     [Header("Weapon Settings")]
     [SerializeField] private GameObject crosshairs;
+    [SerializeField] private Sprite[] crosshairsSprites;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private MeshRenderer weaponRender;
+    [SerializeField] private Material[] weaponColor;
     [SerializeField] private float sensibilityX;
     [SerializeField] private float sensibilityY;
 
@@ -29,19 +32,17 @@ public class PlayerShoot : MonoBehaviour
     private bool canShoot;
     private SpriteRenderer crosshairsSR;
     private BulletStats bulletType;
-    private MeshRenderer weaponRender;
 
     void Start()
     {
         SetBullets();
         canShoot = true;
         crosshairsSR = crosshairs.GetComponent<SpriteRenderer>();
-        weaponRender = weapon.GetComponent<MeshRenderer>();
 
-        crosshairsSR.color = Color.red;
+        crosshairsSR.sprite = crosshairsSprites[0];
         bulletType = plasticBullet;
         GameFacade.Instance.UpdateUIMaterialText("Plástico", Color.red);
-        weaponRender.material.color = Color.red;
+        weaponRender.material = weaponColor[0];
     }
 
     void SetBullets()
@@ -100,31 +101,31 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            crosshairsSR.color = Color.red;
+            crosshairsSR.sprite = crosshairsSprites[0];
             bulletType = plasticBullet;
             GameFacade.Instance.UpdateUIMaterialText("Plástico", Color.red);
-            weaponRender.material.color = Color.red;
+            weaponRender.material = weaponColor[0];
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            crosshairsSR.color = Color.blue;
+            crosshairsSR.sprite = crosshairsSprites[1];
             bulletType = paperBullet;
             GameFacade.Instance.UpdateUIMaterialText("Papel", Color.blue);
-            weaponRender.material.color = Color.blue;
+            weaponRender.material = weaponColor[1];
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            crosshairsSR.color = Color.green;
+            crosshairsSR.sprite = crosshairsSprites[2];
             bulletType = glassBullet;
             GameFacade.Instance.UpdateUIMaterialText("Vidro", Color.green);
-            weaponRender.material.color = Color.green;
+            weaponRender.material = weaponColor[2];
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            crosshairsSR.color = Color.yellow;
+            crosshairsSR.sprite = crosshairsSprites[3];
             bulletType = metalBullet;
             GameFacade.Instance.UpdateUIMaterialText("Metal", Color.yellow);
-            weaponRender.material.color = Color.yellow;
+            weaponRender.material = weaponColor[3];
         }
     }
 

@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6802703657417536203, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8817ca4e97147d84b8d17e4f4ef09552, type: 2}
     - target: {fileID: -5131707603897551057, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -72,6 +76,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -3463544179834886198, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e45de52accf23a488cc06db341e2901, type: 2}
     - target: {fileID: -254841353829239415, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -104,6 +112,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PaperMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 2129005201075528179, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 07e7490921a111c4eabb9f734ca1a0ff, type: 2}
+    - target: {fileID: 2341550220136477474, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 506a6837795216240aea1e781e420d89, type: 2}
     - target: {fileID: 2822500661768266271, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -176,6 +192,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 7042819339596509925, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 63fb8bb1ad7e3914f8cc75a3507f7609, type: 2}
     - target: {fileID: 8879528566716807029, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -216,6 +236,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6778205408614426851}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -822827278674799819}
   m_SourcePrefab: {fileID: 100100000, guid: 311a598c3c1a07f4fa0a0a22b7c43eb7, type: 3}
 --- !u!1 &6715636473363727018 stripped
 GameObject:
@@ -308,3 +331,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   speed: 6
   health: 3
+  deathTime: 1.5
+--- !u!95 &-822827278674799819
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715636473363727018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01d13082107c63b49a9f63c66324b66d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

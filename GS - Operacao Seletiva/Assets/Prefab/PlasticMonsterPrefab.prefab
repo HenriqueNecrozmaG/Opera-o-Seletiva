@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 91461590033174714, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 541612bb0d1e906418bab5550c9dae8c, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       propertyPath: m_Name
       value: PlasticMonsterPrefab
@@ -128,6 +132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3360624810610613872, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ec9a28b7ef987544b7152cb0c79bb03, type: 2}
     - target: {fileID: 4045014248216964311, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -152,6 +160,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 4976421874902236441, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d48bd79436eb141a02730f7734030a, type: 2}
+    - target: {fileID: 5818332452488935984, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 35b2f5c402ed48742bd7cfa7e2abeb84, type: 2}
+    - target: {fileID: 6774845209236981524, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b38573453c708c4d8eb202220d513a3, type: 2}
     - target: {fileID: 8560957067648841338, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -216,6 +236,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7335307297400627465}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9194020413229100626}
   m_SourcePrefab: {fileID: 100100000, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
 --- !u!1 &2075207163655434703 stripped
 GameObject:
@@ -308,3 +331,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   speed: 6
   health: 3
+  deathTime: 1.5
+--- !u!95 &-9194020413229100626
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075207163655434703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 575b6464bfd7e7a4cbe5ef2929e7ccba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
