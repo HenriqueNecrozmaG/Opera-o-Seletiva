@@ -29,6 +29,24 @@ public class EnemyScript : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
+
+            if (gameObject.tag == "PlasticMonster")
+            {
+                GameManager.Instance.AddPlastic();
+            }
+            else if (gameObject.tag == "PaperMonster")
+            {
+                GameManager.Instance.AddPaper();
+            }
+            else if (gameObject.tag == "GlassMonster")
+            {
+                GameManager.Instance.AddGlass();
+            }
+            else if (gameObject.tag == "MetalMonster")
+            {
+                GameManager.Instance.AddMetal();
+            }
+
             Destroy(gameObject);
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class PointAndShoot : MonoBehaviour
+public class PlayerShoot : MonoBehaviour
 {
     [Header("CameraSettings")]
     [SerializeField] private Camera mainCamera;
@@ -34,7 +34,6 @@ public class PointAndShoot : MonoBehaviour
     void Start()
     {
         SetBullets();
-        Cursor.visible = false;
         canShoot = true;
         crosshairsSR = crosshairs.GetComponent<SpriteRenderer>();
         weaponRender = weapon.GetComponent<MeshRenderer>();
@@ -70,17 +69,35 @@ public class PointAndShoot : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.CurrentState == GameState.Paused)
+        {
+            return;
+        }
+
+        Aim();
+        ChangeWeapon();
+        Shoot();
+    }
+
+    void Aim()
+    {
         target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, +10f));
         crosshairs.transform.position = target;
 
         weapon.transform.rotation = Quaternion.Euler(-target.y * sensibilityY, target.x * sensibilityX, 0.0f);
+    }
 
+    void Shoot()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
             ShootBullet(weapon.transform.rotation, bulletType);
             StartCoroutine(shootCooldown());
         }
+    }
 
+    void ChangeWeapon()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             crosshairsSR.color = Color.red;

@@ -33,4 +33,9 @@ public class GameFacade : MonoBehaviour
     {
         uiManager.UpdateHealthBar(currentHealth, maxHealth);
     }
+
+    public void UpdateUIMaterialQuantityTexts(int plasticQuantity, int paperQuantity, int glassQuantity, int metalQuantity)
+    {
+        uiManager.UpdateMaterialQuantityTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
+    }
 }
