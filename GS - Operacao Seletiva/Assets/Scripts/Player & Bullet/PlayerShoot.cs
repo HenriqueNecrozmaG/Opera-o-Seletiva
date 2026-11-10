@@ -69,7 +69,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.CurrentState == GameState.Paused)
+        if (GameManager.Instance.CurrentState == GameState.Paused || GameManager.Instance.CurrentState == GameState.Victory)
         {
             return;
         }

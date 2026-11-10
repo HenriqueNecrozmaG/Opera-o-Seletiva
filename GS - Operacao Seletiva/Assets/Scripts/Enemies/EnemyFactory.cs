@@ -21,6 +21,6 @@ public class EnemyFactory : MonoBehaviour
         
         if (prefab == null) return null;
         
-        return Instantiate(prefab, position, Quaternion.identity);
+        return Instantiate(prefab, position, prefab.transform.rotation);
     }
 }

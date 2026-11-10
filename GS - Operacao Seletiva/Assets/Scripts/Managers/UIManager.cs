@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textPaper;
     [SerializeField] private TextMeshProUGUI textGlass;
     [SerializeField] private TextMeshProUGUI textMetal;
+
+    [SerializeField] private TextMeshProUGUI textTime;
 
     public void ShowHUD()
     {
@@ -36,5 +37,10 @@ public class UIManager : MonoBehaviour
         textPaper.text = "Papel: " + paperQuantity;
         textGlass.text = "Vidro: " + glassQuantity;
         textMetal.text = "Metal: " + metalQuantity;
+    }
+
+    public void UpdateTextTime(int time)
+    {
+        textTime.text = time.ToString();
     }
 }

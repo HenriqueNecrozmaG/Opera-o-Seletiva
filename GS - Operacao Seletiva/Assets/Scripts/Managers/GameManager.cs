@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int gameTime;
 
-    public int plasticQuantity, paperQuantity, glassQuantity, metalQuantity;
+    [HideInInspector] public int plasticQuantity, paperQuantity, glassQuantity, metalQuantity;
 
     private int time;
 
@@ -40,25 +40,13 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
 
         time = gameTime;
+        GameFacade.Instance.UpdateUITextTime(time);
+        StartCoroutine(CountTime());
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (CurrentState == GameState.Playing)
-            {
-                CurrentState = GameState.Paused;
-                Cursor.visible = true;
-                Time.timeScale = 0f;
-            }
-            else if (CurrentState == GameState.Paused)
-            {
-                CurrentState = GameState.Playing;
-                Cursor.visible = false;
-                Time.timeScale = 1f;
-            }
-        }
+        Pause();
     }
 
     public void AddPlastic()
@@ -85,6 +73,25 @@ public class GameManager : MonoBehaviour
         GameFacade.Instance.UpdateUIMaterialQuantityTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
     }
 
+    private void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (CurrentState == GameState.Playing)
+            {
+                CurrentState = GameState.Paused;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+            }
+            else if (CurrentState == GameState.Paused)
+            {
+                CurrentState = GameState.Playing;
+                Cursor.visible = false;
+                Time.timeScale = 1f;
+            }
+        }
+    }
+
     public void Defeat()
     {
         CurrentState = GameState.Defeat;
@@ -92,21 +99,37 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void Victory()
+    {
+        CurrentState = GameState.Victory;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
+        Resources.plastic = plasticQuantity;
+        Resources.paper = paperQuantity;
+        Resources.glass = glassQuantity;
+        Resources.metal = metalQuantity;
+
+        print("Plastic: " + Resources.plastic);
+        print("Paper: " + Resources.paper);
+        print("Glass: " + Resources.glass);
+        print("Metal: " + Resources.metal);
+    }
+
     IEnumerator CountTime()
     {
         yield return new WaitForSeconds(1);
 
         time--;
+        GameFacade.Instance.UpdateUITextTime(time);
 
         if (time <= 0)
         {
             time = 0;
-            CurrentState = GameState.Victory;
-            Time.timeScale = 0f;
-            yield return null;
+            Victory();
+            yield return new WaitForSeconds(0.1f);
         }
 
-        print("Corroutine has started again");
         StartCoroutine(CountTime());
     }
 }

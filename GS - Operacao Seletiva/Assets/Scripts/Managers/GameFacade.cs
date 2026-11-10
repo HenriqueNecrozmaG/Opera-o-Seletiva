@@ -38,4 +38,9 @@ public class GameFacade : MonoBehaviour
     {
         uiManager.UpdateMaterialQuantityTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
     }
+
+    public void UpdateUITextTime(int time)
+    {
+        uiManager.UpdateTextTime(time);
+    }
 }
