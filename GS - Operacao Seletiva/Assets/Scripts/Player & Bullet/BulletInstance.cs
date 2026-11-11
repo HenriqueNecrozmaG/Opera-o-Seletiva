@@ -5,9 +5,9 @@ public class BulletInstance : MonoBehaviour
     public BulletStats stats; 
 
     [SerializeField] private float speed;
+    [SerializeField] private MeshRenderer render;
 
     private Rigidbody rb;
-    private MeshRenderer render;
 
     public void Setup(BulletStats stats)
     {
@@ -18,9 +18,8 @@ public class BulletInstance : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        render = rb.GetComponent<MeshRenderer>();
 
-        render.material.color = stats.bulletColor;
+        render.material = stats.bulletMaterial;
     }
 
     void Update()

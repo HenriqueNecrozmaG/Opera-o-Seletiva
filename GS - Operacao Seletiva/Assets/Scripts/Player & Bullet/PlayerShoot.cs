@@ -19,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
     [Header("Bullet Settings")]
     [SerializeField] private BulletStats bulletStats;
     [SerializeField] private BulletInstance bulletPrefab;
+    [SerializeField] private Material[] bulletColor;
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float timeToDestroy;
     [SerializeField] private float cooldown;
@@ -49,22 +50,22 @@ public class PlayerShoot : MonoBehaviour
     {
         plasticBullet = bulletStats.Clone();
         plasticBullet.bulletName = "PlasticBullet";
-        plasticBullet.bulletColor = Color.red;
+        plasticBullet.bulletMaterial = bulletColor[0];
         plasticBullet.materialIndex = 0;
 
         paperBullet = bulletStats.Clone();
         paperBullet.bulletName = "PaperBullet";
-        paperBullet.bulletColor = Color.blue;
+        paperBullet.bulletMaterial = bulletColor[1];
         paperBullet.materialIndex = 1;
 
         glassBullet = bulletStats.Clone();
         glassBullet.bulletName = "GlassBullet";
-        glassBullet.bulletColor = Color.green;
+        glassBullet.bulletMaterial = bulletColor[2];
         glassBullet.materialIndex = 2;
 
         metalBullet = bulletStats.Clone();
         metalBullet.bulletName = "MetalBullet";
-        metalBullet.bulletColor = Color.yellow;
+        metalBullet.bulletMaterial = bulletColor[3];
         metalBullet.materialIndex = 3;
     }
 
