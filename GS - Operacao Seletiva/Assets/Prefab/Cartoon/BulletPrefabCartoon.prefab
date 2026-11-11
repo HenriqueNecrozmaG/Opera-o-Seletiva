@@ -99,7 +99,7 @@ MonoBehaviour:
     bulletName: 
     bulletMaterial: {fileID: 0}
     materialIndex: 0
-  speed: 30
+  speed: 40
   render: {fileID: 5949553946333135929}
 --- !u!1001 &4994661771468298429
 PrefabInstance:

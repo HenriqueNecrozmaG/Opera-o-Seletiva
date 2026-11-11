@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -79,12 +80,14 @@ public class GameManager : MonoBehaviour
         {
             if (CurrentState == GameState.Playing)
             {
+                GameFacade.Instance.ShowUIPausePanel();
                 CurrentState = GameState.Paused;
                 Cursor.visible = true;
                 Time.timeScale = 0f;
             }
             else if (CurrentState == GameState.Paused)
             {
+                GameFacade.Instance.HideUIPausePanel();
                 CurrentState = GameState.Playing;
                 Cursor.visible = false;
                 Time.timeScale = 1f;
@@ -92,8 +95,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Unpause()
+    {
+        GameFacade.Instance.HideUIPausePanel();
+        CurrentState = GameState.Playing;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
+
+    public void Options()
+    {
+        Debug.Log("Open options menu");
+    }
+
+    public void Return()
+    {
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("StartScene");
+    }
+
     public void Defeat()
     {
+        GameFacade.Instance.ShowUIDefeatPanel();
         CurrentState = GameState.Defeat;
         Cursor.visible = true;
         Time.timeScale = 0f;
@@ -101,14 +124,16 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
+        GameFacade.Instance.ShowUIVictoryPanel();
         CurrentState = GameState.Victory;
         Cursor.visible = true;
         Time.timeScale = 0f;
+        GameFacade.Instance.UpdateUIMaterialQuantityVictoryTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
 
-        Resources.plastic = plasticQuantity;
-        Resources.paper = paperQuantity;
-        Resources.glass = glassQuantity;
-        Resources.metal = metalQuantity;
+        Resources.plastic += plasticQuantity;
+        Resources.paper += paperQuantity;
+        Resources.glass += glassQuantity;
+        Resources.metal += metalQuantity;
 
         print("Plastic: " + Resources.plastic);
         print("Paper: " + Resources.paper);
@@ -132,4 +157,5 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(CountTime());
     }
+
 }

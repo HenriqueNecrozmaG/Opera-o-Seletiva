@@ -39,8 +39,33 @@ public class GameFacade : MonoBehaviour
         uiManager.UpdateMaterialQuantityTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
     }
 
+    public void UpdateUIMaterialQuantityVictoryTexts(int plasticQuantity, int paperQuantity, int glassQuantity, int metalQuantity)
+    {
+        uiManager.UpdateMaterialQuantityVictoryTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
+    }
+
     public void UpdateUITextTime(int time)
     {
         uiManager.UpdateTextTime(time);
+    }
+
+    public void ShowUIPausePanel()
+    {
+        uiManager.ShowPausePanel();
+    }
+
+    public void HideUIPausePanel()
+    {
+        uiManager.HidePausePanel();
+    }
+
+    public void ShowUIVictoryPanel()
+    {
+        uiManager.ShowVictoryPanel();
+    }
+
+    public void ShowUIDefeatPanel()
+    {
+        uiManager.ShowDefeatPanel();
     }
 }
