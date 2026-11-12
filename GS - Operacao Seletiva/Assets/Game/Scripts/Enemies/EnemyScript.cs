@@ -4,9 +4,10 @@ using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float health;
     [SerializeField] private float deathTime;
+
+    private float speed;
+    private float health;
 
     private NavMeshAgent agent;
     private Transform target;
@@ -19,6 +20,9 @@ public class EnemyScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+
+        speed = DifficultyManager.Instance.enemySpeed;
+        health = DifficultyManager.Instance.enemyHealth;
 
         agent.speed = speed;
         isDead = false;

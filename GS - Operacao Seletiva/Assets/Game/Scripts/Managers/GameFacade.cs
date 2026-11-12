@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameFacade : MonoBehaviour
@@ -7,6 +6,7 @@ public class GameFacade : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private SpawnPlayerAndEnemySpawner spawner;
 
     void Awake()
     {
@@ -19,8 +19,14 @@ public class GameFacade : MonoBehaviour
         Instance = this;
     }
 
+    public void ShowUIDifficultyPanel(float easyTime, float mediumTime, float hardTime)
+    {
+        uiManager.ShowDifficultyPanel(easyTime, mediumTime, hardTime);
+    }
+
     public void StartGame()
     {
+        spawner.Spawn();
         uiManager.ShowHUD();
     }
 

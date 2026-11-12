@@ -4,36 +4,19 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyFactory factory;
-    [SerializeField] private float spawnTime;
+    
+    private float spawnTime;
 
     void Start()
     {
+        spawnTime = DifficultyManager.Instance.enemySpawnTime;
+
         StartCoroutine(SpawnCoroutine());
     }
 
     public void Spawn(EnemyType type)
     {
         factory.CreateEnemy(type, new Vector3(Random.Range(-25f, 25f), -0.9f, 72f));
-    }
-    
-    void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Spawn(EnemyType.PlasticEnemy);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Spawn(EnemyType.PaperEnemy);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Spawn(EnemyType.GlassEnemy);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Spawn(EnemyType.MetalEnemy);
-        }*/
     }
 
     IEnumerator SpawnCoroutine()

@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public GameState CurrentState { get; private set; }
 
-    [SerializeField] private int gameTime;
-
     [HideInInspector] public int plasticQuantity, paperQuantity, glassQuantity, metalQuantity;
 
     private int time;
@@ -33,14 +31,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    void Start()
+    public void StartGame()
     {
         GameFacade.Instance.StartGame();
         GameFacade.Instance.UpdateUIMaterialQuantityTexts(plasticQuantity, plasticQuantity, glassQuantity, metalQuantity);
         CurrentState = GameState.Playing;
         Cursor.visible = false;
 
-        time = gameTime;
+        time = DifficultyManager.Instance.gameTime;
         GameFacade.Instance.UpdateUITextTime(time);
         StartCoroutine(CountTime());
     }

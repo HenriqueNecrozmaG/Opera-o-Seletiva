@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelPause;
     [SerializeField] private GameObject panelVictory;
     [SerializeField] private GameObject panelDefeat;
+    [SerializeField] private GameObject panelDifficulty;
 
     [Header("HUD Settings")]
     [SerializeField] private TextMeshProUGUI textMaterial;
@@ -25,12 +26,28 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textGlassVictory;
     [SerializeField] private TextMeshProUGUI textMetalVictory;
 
-    public void ShowHUD()
+    [Header("Difficulty Settings")]
+    [SerializeField] private TextMeshProUGUI textEasyTime;
+    [SerializeField] private TextMeshProUGUI textMediumTime;
+    [SerializeField] private TextMeshProUGUI textHardTime;
+    
+    public void ShowDifficultyPanel(float easyTime, float mediumTime, float hardTime)
     {
-        panelHUD.SetActive(true);
+        panelDifficulty.SetActive(true);
+        panelHUD.SetActive(false);
         panelPause.SetActive(false);
         panelVictory.SetActive(false);
         panelDefeat.SetActive(false);
+
+        textEasyTime.text = "Tempo: " + easyTime;
+        textMediumTime.text = "Tempo: " + mediumTime;
+        textHardTime.text = "Tempo: " + hardTime;
+    }
+
+    public void ShowHUD()
+    {
+        panelHUD.SetActive(true);
+        panelDifficulty.SetActive(false);
     }
 
     public void UpdateMaterialText(string text, Color color)
