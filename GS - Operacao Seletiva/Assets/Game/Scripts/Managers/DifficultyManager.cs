@@ -50,6 +50,7 @@ public class DifficultyManager : MonoBehaviour
         enemySpeed = easySpeed;
         enemySpawnTime = easySpawnTime;
         enemyHealth = mediumHealth;
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
     }
 
@@ -59,6 +60,7 @@ public class DifficultyManager : MonoBehaviour
         enemySpeed = mediumSpeed;
         enemySpawnTime = mediumSpawnTime;
         enemyHealth = mediumHealth;
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
     }
 
@@ -68,6 +70,7 @@ public class DifficultyManager : MonoBehaviour
         enemySpeed = hardSpeed;
         enemySpawnTime = hardSpawnTime;
         enemyHealth = hardHealth;
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
     }
 }

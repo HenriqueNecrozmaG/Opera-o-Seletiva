@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
         time = DifficultyManager.Instance.gameTime;
         GameFacade.Instance.UpdateUITextTime(time);
+        GameFacade.Instance.MusicPlay(0);
         StartCoroutine(CountTime());
     }
 
@@ -76,11 +77,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            GameFacade.Instance.PlayAudioSoundEffect(0);
+
             if (CurrentState == GameState.Playing)
             {
                 GameFacade.Instance.ShowUIPausePanel();
                 CurrentState = GameState.Paused;
                 Cursor.visible = true;
+                GameFacade.Instance.MusicPause();
                 Time.timeScale = 0f;
             }
             else if (CurrentState == GameState.Paused)
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
                 GameFacade.Instance.HideUIPausePanel();
                 CurrentState = GameState.Playing;
                 Cursor.visible = false;
+                GameFacade.Instance.MusicUnPause();
                 Time.timeScale = 1f;
             }
         }
@@ -95,19 +100,23 @@ public class GameManager : MonoBehaviour
 
     public void Unpause()
     {
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         GameFacade.Instance.HideUIPausePanel();
         CurrentState = GameState.Playing;
         Cursor.visible = false;
+        GameFacade.Instance.MusicUnPause();
         Time.timeScale = 1f;
     }
 
     public void Options()
     {
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         Debug.Log("Open options menu");
     }
 
     public void Return()
     {
+        GameFacade.Instance.PlayAudioSoundEffect(0);
         Time.timeScale = 0f;
         SceneManager.LoadScene("StartScene");
     }
@@ -117,6 +126,7 @@ public class GameManager : MonoBehaviour
         GameFacade.Instance.ShowUIDefeatPanel();
         CurrentState = GameState.Defeat;
         Cursor.visible = true;
+        GameFacade.Instance.MusicPlay(2);
         Time.timeScale = 0f;
     }
 
@@ -125,6 +135,7 @@ public class GameManager : MonoBehaviour
         GameFacade.Instance.ShowUIVictoryPanel();
         CurrentState = GameState.Victory;
         Cursor.visible = true;
+        GameFacade.Instance.MusicPlay(1);
         Time.timeScale = 0f;
         GameFacade.Instance.UpdateUIMaterialQuantityVictoryTexts(plasticQuantity, paperQuantity, glassQuantity, metalQuantity);
 
@@ -155,5 +166,4 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(CountTime());
     }
-
 }

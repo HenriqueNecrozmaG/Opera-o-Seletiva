@@ -45,6 +45,10 @@ public class BulletInstance : MonoBehaviour
         {
             other.GetComponent<EnemyScript>().Damage();
         }
+        else
+        {
+            GameFacade.Instance.PlayAudioSoundEffect(7);
+        }
 
         Destroy(gameObject);
     }

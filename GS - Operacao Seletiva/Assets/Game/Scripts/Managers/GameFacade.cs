@@ -6,7 +6,9 @@ public class GameFacade : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private SpawnPlayerAndEnemySpawner spawner;
+    [SerializeField] private SpawnPlayerEnemySpawnerAndRainEffect spawner;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private MusicManager musicManager;
 
     void Awake()
     {
@@ -73,5 +75,29 @@ public class GameFacade : MonoBehaviour
     public void ShowUIDefeatPanel()
     {
         uiManager.ShowDefeatPanel();
+    }
+
+    public void PlayAudioSoundEffect(int i)
+    {
+        audioManager.PlaySoundEffect(i);
+    }
+
+    public void MusicPlay(int i)
+    {
+        musicManager.Play(i);
+    }
+
+    public void MusicPause()
+    {
+        musicManager.Pause();
+    }
+    public void MusicUnPause()
+    {
+        musicManager.UnPause();
+    }
+
+    public void MusicStop()
+    {
+        musicManager.Stop();
     }
 }

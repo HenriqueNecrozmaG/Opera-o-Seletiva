@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour
     private NavMeshAgent agent;
     private Transform target;
     private Animator anim;
+    private Collider col;
     private bool isDead;
     private bool attack;
 
@@ -20,6 +21,7 @@ public class EnemyScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        col = GetComponent<Collider>();
 
         speed = DifficultyManager.Instance.enemySpeed;
         health = DifficultyManager.Instance.enemyHealth;
@@ -54,11 +56,32 @@ public class EnemyScript : MonoBehaviour
             health = 0;
             StartCoroutine(Death());
         }
+        else
+        {
+            if (gameObject.tag == "PlasticMonster")
+            {
+                GameFacade.Instance.PlayAudioSoundEffect(1);
+            }
+            else if (gameObject.tag == "PaperMonster")
+            {
+                GameFacade.Instance.PlayAudioSoundEffect(2);
+            }
+            else if (gameObject.tag == "GlassMonster")
+            {
+                GameFacade.Instance.PlayAudioSoundEffect(3);
+            }
+            else if (gameObject.tag == "MetalMonster")
+            {
+                GameFacade.Instance.PlayAudioSoundEffect(4);
+            }
+        }
     }
 
     IEnumerator Death()
     {
         isDead = true;
+        col.enabled = false;
+        GameFacade.Instance.PlayAudioSoundEffect(5);
 
         if (gameObject.tag == "PlasticMonster")
         {

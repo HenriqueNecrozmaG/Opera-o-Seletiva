@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth--;
+        GameFacade.Instance.PlayAudioSoundEffect(6);
         GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth);
 
         if (currentHealth <= 0)

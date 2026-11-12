@@ -136,6 +136,7 @@ public class PlayerShoot : MonoBehaviour
         bullet.Setup(bulletType);
         bullet.transform.position = bulletPosition.position;
         bullet.transform.rotation = rotation;
+        GameFacade.Instance.PlayAudioSoundEffect(8);
         Destroy(bullet.gameObject, timeToDestroy);
     }
 
