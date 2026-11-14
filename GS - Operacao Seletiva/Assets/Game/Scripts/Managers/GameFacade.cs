@@ -77,6 +77,16 @@ public class GameFacade : MonoBehaviour
         uiManager.ShowDefeatPanel();
     }
 
+    public void ShowUIOptionsPanel()
+    {
+        uiManager.ShowOptionsPanel();
+    }
+    
+    public void HideUIOptionsPanel()
+    {
+        uiManager.HideOptionsPanel();
+    }
+
     public void PlayAudioSoundEffect(int i)
     {
         audioManager.PlaySoundEffect(i);

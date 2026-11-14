@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9c0f785943ab94f8b9d8540ecd8a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
   crosshairs: {fileID: 1709051242374921628}
   crosshairsSprites:
   - {fileID: 21300000, guid: fc992befb4bf8674d8102d5a972cfd42, type: 3}
@@ -220,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 10
+  punchEffect: {fileID: 3762851483406639087, guid: 5a55443811ddd3f46b6b0dd7122e4c48, type: 3}
 --- !u!1 &3633419413055033363
 GameObject:
   m_ObjectHideFlags: 0

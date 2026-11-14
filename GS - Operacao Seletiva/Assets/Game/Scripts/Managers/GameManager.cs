@@ -90,8 +90,15 @@ public class GameManager : MonoBehaviour
             else if (CurrentState == GameState.Paused)
             {
                 GameFacade.Instance.HideUIPausePanel();
+                GameFacade.Instance.HideUIOptionsPanel();
                 CurrentState = GameState.Playing;
-                Cursor.visible = false;
+                
+                if (DifficultyManager.Instance.isChoosing == false)
+                {
+                    
+                    Cursor.visible = false;
+                }
+
                 GameFacade.Instance.MusicUnPause();
                 Time.timeScale = 1f;
             }
@@ -102,8 +109,15 @@ public class GameManager : MonoBehaviour
     {
         GameFacade.Instance.PlayAudioSoundEffect(0);
         GameFacade.Instance.HideUIPausePanel();
+        GameFacade.Instance.HideUIOptionsPanel();
         CurrentState = GameState.Playing;
-        Cursor.visible = false;
+
+        if (DifficultyManager.Instance.isChoosing == false)
+        {
+
+            Cursor.visible = false;
+        }
+
         GameFacade.Instance.MusicUnPause();
         Time.timeScale = 1f;
     }
@@ -111,7 +125,13 @@ public class GameManager : MonoBehaviour
     public void Options()
     {
         GameFacade.Instance.PlayAudioSoundEffect(0);
-        Debug.Log("Open options menu");
+        GameFacade.Instance.ShowUIOptionsPanel();
+    }
+    
+    public void CloseOptions()
+    {
+        GameFacade.Instance.PlayAudioSoundEffect(0);
+        GameFacade.Instance.HideUIOptionsPanel();
     }
 
     public void Return()

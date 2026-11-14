@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 67c1d578bb9cb1842a4e25a66cc01f34, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       propertyPath: m_Name
-      value: PlasticMonsterPrefabCartoon
+      value: PlasticMonsterPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c5b3a264000d8f4c91b9c08d2929d63, type: 3}
       propertyPath: m_TagString
@@ -329,9 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588480c22fba5ff4ebe3de12a7892a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
-  speed: 6
-  health: 3
   deathTime: 1.5
+  punchEffect: {fileID: 3762851483406639087, guid: e750ae5a932bddd4b8ad908d70f4c3de, type: 3}
 --- !u!95 &-9194020413229100626
 Animator:
   serializedVersion: 7

@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca1457cb38dcb0d46b607f608500ec3b, type: 3}
       propertyPath: m_Name
-      value: GlassMonsterPrefabCartoon
+      value: GlassMonsterPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca1457cb38dcb0d46b607f608500ec3b, type: 3}
       propertyPath: m_TagString
@@ -329,9 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588480c22fba5ff4ebe3de12a7892a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
-  speed: 6
-  health: 3
   deathTime: 1.5
+  punchEffect: {fileID: 3762851483406639087, guid: be3a7cd283db6604bb13613ec4cc43fd, type: 3}
 --- !u!95 &-8761847469414119467
 Animator:
   serializedVersion: 7

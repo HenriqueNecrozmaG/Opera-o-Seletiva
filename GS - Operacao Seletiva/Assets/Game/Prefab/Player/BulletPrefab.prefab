@@ -101,6 +101,10 @@ MonoBehaviour:
     materialIndex: 0
   speed: 40
   render: {fileID: 5949553946333135929}
+  punchEffectRed: {fileID: 3762851483406639087, guid: e750ae5a932bddd4b8ad908d70f4c3de, type: 3}
+  punchEffectBlue: {fileID: 3762851483406639087, guid: 592748468c3aadb4186f28e5cbccc71b, type: 3}
+  punchEffectGreen: {fileID: 3762851483406639087, guid: be3a7cd283db6604bb13613ec4cc43fd, type: 3}
+  punchEffectYellow: {fileID: 3762851483406639087, guid: 8dd3d35bc5236c047bef42a8dc98e646, type: 3}
 --- !u!1001 &4994661771468298429
 PrefabInstance:
   m_ObjectHideFlags: 0

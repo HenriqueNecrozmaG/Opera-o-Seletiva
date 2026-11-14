@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelVictory;
     [SerializeField] private GameObject panelDefeat;
     [SerializeField] private GameObject panelDifficulty;
+    [SerializeField] private GameObject panelOptions;
 
     [Header("HUD Settings")]
     [SerializeField] private TextMeshProUGUI textMaterial;
@@ -38,6 +39,7 @@ public class UIManager : MonoBehaviour
         panelPause.SetActive(false);
         panelVictory.SetActive(false);
         panelDefeat.SetActive(false);
+        panelOptions.SetActive(false);
 
         textEasyTime.text = "Tempo: " + easyTime;
         textMediumTime.text = "Tempo: " + mediumTime;
@@ -102,5 +104,15 @@ public class UIManager : MonoBehaviour
     {
         panelDefeat.SetActive(true);
         panelHUD.SetActive(false);
+    }
+
+    public void ShowOptionsPanel()
+    {
+        panelOptions.SetActive(true);
+    }
+    
+    public void HideOptionsPanel()
+    {
+        panelOptions.SetActive(false);
     }
 }

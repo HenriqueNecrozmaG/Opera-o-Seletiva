@@ -28,6 +28,8 @@ public class DifficultyManager : MonoBehaviour
     [HideInInspector] public float enemySpawnTime;
     [HideInInspector] public float enemyHealth;
 
+    [HideInInspector] public bool isChoosing;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -42,6 +44,7 @@ public class DifficultyManager : MonoBehaviour
     void Start()
     {
         GameFacade.Instance.ShowUIDifficultyPanel(easyTime, mediumTime, hardTime);
+        isChoosing = true;
     }
 
     public void Easy()
@@ -52,6 +55,7 @@ public class DifficultyManager : MonoBehaviour
         enemyHealth = mediumHealth;
         GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
+        isChoosing = false;
     }
 
     public void Medium()
@@ -62,6 +66,7 @@ public class DifficultyManager : MonoBehaviour
         enemyHealth = mediumHealth;
         GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
+        isChoosing = false;
     }
 
     public void Hard()
@@ -72,5 +77,6 @@ public class DifficultyManager : MonoBehaviour
         enemyHealth = hardHealth;
         GameFacade.Instance.PlayAudioSoundEffect(0);
         GameManager.Instance.StartGame();
+        isChoosing = false;
     }
 }
