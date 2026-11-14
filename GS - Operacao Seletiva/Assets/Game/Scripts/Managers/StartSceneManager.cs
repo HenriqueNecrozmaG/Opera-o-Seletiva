@@ -5,10 +5,12 @@ public class StartSceneManager : MonoBehaviour
 {
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private MusicManager musicManager;
+    [SerializeField] private GameObject panelOptions;
 
     void Start()
     {
         musicManager.Play(0);
+        panelOptions.SetActive(false);
     }
 
     public void Play()
@@ -26,7 +28,13 @@ public class StartSceneManager : MonoBehaviour
     public void Options()
     {
         audioManager.PlaySoundEffect(0);
-        Debug.Log("Open options menu");
+        panelOptions.SetActive(true);
+    }
+    
+    public void CloseOptions()
+    {
+        audioManager.PlaySoundEffect(0);
+        panelOptions.SetActive(false);
     }
 
     public void Controls()

@@ -667,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
   audioMixer: {fileID: 24100000, guid: 2e3f8d394322e354bab080ba6389aaf2, type: 2}
   floatParameter: Music Volume
+  sliderIndex: 1
 --- !u!1 &3464668276350203202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
   audioMixer: {fileID: 24100000, guid: 2e3f8d394322e354bab080ba6389aaf2, type: 2}
   floatParameter: SFX Volume
+  sliderIndex: 2
 --- !u!1 &4589130047013798564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
   audioMixer: {fileID: 24100000, guid: 2e3f8d394322e354bab080ba6389aaf2, type: 2}
   floatParameter: Master Volume
+  sliderIndex: 0
 --- !u!1 &8952225007315398484
 GameObject:
   m_ObjectHideFlags: 0

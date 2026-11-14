@@ -6,9 +6,10 @@ public class VolumeManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public string floatParameter;
+    public int sliderIndex;
 
     private Slider volumeSlider;
-    private static float sliderValue = 5;
+    private static float[] sliderValue = { 5, 5, 5};
 
     void Awake()
     {
@@ -17,12 +18,12 @@ public class VolumeManager : MonoBehaviour
 
     void Start()
     {
-        volumeSlider.value = sliderValue;
+        volumeSlider.value = sliderValue[sliderIndex];
     }
 
     public void OnVolumeChanged(float v)
     {
         audioMixer.SetFloat(floatParameter, v);
-        sliderValue = volumeSlider.value;
+        sliderValue[sliderIndex] = volumeSlider.value;
     }
 }
