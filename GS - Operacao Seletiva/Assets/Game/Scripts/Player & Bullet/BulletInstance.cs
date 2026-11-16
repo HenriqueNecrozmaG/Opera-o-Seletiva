@@ -5,6 +5,7 @@ public class BulletInstance : MonoBehaviour
     public BulletStats stats; 
 
     [SerializeField] private float speed;
+    [SerializeField] private float damage;
     [SerializeField] private MeshRenderer render;
 
     [Header("Damage Effects")]
@@ -37,28 +38,28 @@ public class BulletInstance : MonoBehaviour
     {
         if (other.gameObject.tag == "PlasticMonster" && stats.materialIndex == 0)
         {
-            other.GetComponent<EnemyScript>().Damage();
+            other.GetComponent<EnemyScript>().Damage(damage);
             GameObject damageEffect = Instantiate(punchEffectRed);
             damageEffect.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 4f);
             Destroy(damageEffect, 0.5f);
         }
         else if (other.gameObject.tag == "PaperMonster" && stats.materialIndex == 1)
         {
-            other.GetComponent<EnemyScript>().Damage();
+            other.GetComponent<EnemyScript>().Damage(damage);
             GameObject damageEffect = Instantiate(punchEffectBlue);
             damageEffect.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 4f);
             Destroy(damageEffect, 0.5f);
         }
         else if (other.gameObject.tag == "GlassMonster" && stats.materialIndex == 2)
         {
-            other.GetComponent<EnemyScript>().Damage();
+            other.GetComponent<EnemyScript>().Damage(damage);
             GameObject damageEffect = Instantiate(punchEffectGreen);
             damageEffect.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 4f);
             Destroy(damageEffect, 0.5f);
         }
         else if (other.gameObject.tag == "MetalMonster" && stats.materialIndex == 3)
         {
-            other.GetComponent<EnemyScript>().Damage();
+            other.GetComponent<EnemyScript>().Damage(damage);
             GameObject damageEffect = Instantiate(punchEffectYellow);
             damageEffect.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 4f);
             Destroy(damageEffect, 0.5f);

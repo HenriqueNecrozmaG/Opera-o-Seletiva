@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManagerGame : MonoBehaviour
 {
     [Header("Panel Settings")]
     [SerializeField] private GameObject panelHUD;

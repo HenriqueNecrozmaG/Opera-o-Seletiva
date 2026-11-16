@@ -181,7 +181,10 @@ MonoBehaviour:
     bulletName: 
     bulletMaterial: {fileID: 0}
     materialIndex: 0
-  bulletPrefab: {fileID: 3957300618312962212, guid: 90154aecd3c745540abdce251d01032e, type: 3}
+  bulletPrefab:
+  - {fileID: 3957300618312962212, guid: 90154aecd3c745540abdce251d01032e, type: 3}
+  - {fileID: 3957300618312962212, guid: 89bb3c66e03aaff4ea59b2951a0aaf4f, type: 3}
+  - {fileID: 3957300618312962212, guid: 4308169282f7b5f49b1cdb08edf23b1e, type: 3}
   bulletColor:
   - {fileID: 2100000, guid: 869eab06143d8644c9fdef3419a831b7, type: 2}
   - {fileID: 2100000, guid: 85da9bb74d4026745b05ecb2c3271459, type: 2}
@@ -218,7 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f321aae8b5d7be443bf02bbbc8d648b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
+  maxHealth:
+  - 10
+  - 12
+  - 15
   punchEffect: {fileID: 3762851483406639087, guid: 5a55443811ddd3f46b6b0dd7122e4c48, type: 3}
 --- !u!1 &3633419413055033363
 GameObject:

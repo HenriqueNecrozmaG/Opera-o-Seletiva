@@ -5,7 +5,7 @@ public class GameFacade : MonoBehaviour
     public static GameFacade Instance { get; private set; }
 
     [Header("Managers")]
-    [SerializeField] private UIManager uiManager;
+    [SerializeField] private UIManagerGame uiManager;
     [SerializeField] private SpawnPlayerEnemySpawnerAndRainEffect spawner;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private MusicManager musicManager;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2444427860552519606}
   - component: {fileID: 3957300618312962212}
   m_Layer: 0
-  m_Name: BulletPrefab
+  m_Name: BulletPrefabLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
     bulletMaterial: {fileID: 0}
     materialIndex: 0
   speed: 40
+  damage: 1
   render: {fileID: 5949553946333135929}
   punchEffectRed: {fileID: 3762851483406639087, guid: e750ae5a932bddd4b8ad908d70f4c3de, type: 3}
   punchEffectBlue: {fileID: 3762851483406639087, guid: 592748468c3aadb4186f28e5cbccc71b, type: 3}

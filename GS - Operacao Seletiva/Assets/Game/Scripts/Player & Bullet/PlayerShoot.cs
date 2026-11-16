@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.Compilation;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
@@ -15,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
 
     [Header("Bullet Settings")]
     [SerializeField] private BulletStats bulletStats;
-    [SerializeField] private BulletInstance bulletPrefab;
+    [SerializeField] private BulletInstance[] bulletPrefab;
     [SerializeField] private Material[] bulletColor;
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float timeToDestroy;
@@ -132,7 +133,21 @@ public class PlayerShoot : MonoBehaviour
 
     void ShootBullet(Quaternion rotation, BulletStats bulletType)
     {
-        BulletInstance bullet = Instantiate(bulletPrefab);
+        BulletInstance bullet = null;
+
+        if (Resources.weaponLevel == 1)
+        {
+            bullet = Instantiate(bulletPrefab[0]);
+        }
+        else if (Resources.weaponLevel == 2)
+        {
+            bullet = Instantiate(bulletPrefab[1]);
+        }
+        else if (Resources.weaponLevel == 3)
+        {
+            bullet = Instantiate(bulletPrefab[2]);
+        }
+
         bullet.Setup(bulletType);
         bullet.transform.position = bulletPosition.position;
         bullet.transform.rotation = rotation;

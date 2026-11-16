@@ -47,9 +47,9 @@ public class EnemyScript : MonoBehaviour
         Animate();
     }
 
-    public void Damage()
+    public void Damage(float d)
     {
-        health--;
+        health -= d;
 
         if (health <= 0)
         {

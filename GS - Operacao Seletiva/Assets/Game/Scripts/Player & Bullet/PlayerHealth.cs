@@ -1,24 +1,35 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
+    [SerializeField] private float[] maxHealth;
     public GameObject punchEffect;
 
     private float currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth);
+        if (Resources.playerLevel == 1)
+        {
+            currentHealth = maxHealth[0];
+        }
+        else if (Resources.playerLevel == 2)
+        {
+            currentHealth = maxHealth[1];
+        }
+        else if (Resources.playerLevel == 3)
+        {
+            currentHealth = maxHealth[2];
+        }
+
+        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[0]);
     }
 
     public void TakeDamage()
     {
         currentHealth--;
         GameFacade.Instance.PlayAudioSoundEffect(6);
-        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth);
+        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[0]);
         GameObject damageEffect = Instantiate(punchEffect);
         damageEffect.transform.position = new Vector3(0f, 1.2f, -5f);
         Destroy(damageEffect, 0.5f);
