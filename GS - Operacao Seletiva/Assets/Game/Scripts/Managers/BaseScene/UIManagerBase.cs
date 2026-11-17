@@ -29,24 +29,28 @@ public class UIManagerBase : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textPlasticMachineUpgradeCost;
     [SerializeField] private Button buttonRecyclePlastic;
     [SerializeField] private Button buttonUpgradePlastic;
+    [SerializeField] private Slider sliderPlastic;
 
     [Header("Paper Settings")]
     [SerializeField] private TextMeshProUGUI textPaperMachineLevel;
     [SerializeField] private TextMeshProUGUI textPaperMachineUpgradeCost;
     [SerializeField] private Button buttonRecyclePaper;
     [SerializeField] private Button buttonUpgradePaper;
+    [SerializeField] private Slider sliderPaper;
 
     [Header("Glass Settings")]
     [SerializeField] private TextMeshProUGUI textGlassMachineLevel;
     [SerializeField] private TextMeshProUGUI textGlassMachineUpgradeCost;
     [SerializeField] private Button buttonRecycleGlass;
     [SerializeField] private Button buttonUpgradeGlass;
+    [SerializeField] private Slider sliderGlass;
 
     [Header("Metal Settings")]
     [SerializeField] private TextMeshProUGUI textMetalMachineLevel;
     [SerializeField] private TextMeshProUGUI textMetalMachineUpgradeCost;
     [SerializeField] private Button buttonRecycleMetal;
     [SerializeField] private Button buttonUpgradeMetal;
+    [SerializeField] private Slider sliderMetal;
 
     [Header("Player & Weapon Settings")]
     [SerializeField] private TextMeshProUGUI textPlayerLevel;
@@ -187,6 +191,21 @@ public class UIManagerBase : MonoBehaviour
         buttonUpgradePlastic.interactable = false;
     }
 
+    public void EnableSliderPlastic()
+    {
+        sliderPlastic.gameObject.SetActive(true);
+    }
+    
+    public void DisableSliderPlastic()
+    {
+        sliderPlastic.gameObject.SetActive(false);
+    }
+
+    public void UpdateSliderPlastic(float value)
+    {
+        sliderPlastic.value = value;
+    }
+
     ///MÁQUINA DE PAPEL///
     public void UpdatePaperMachineText(int machineLevel, int cost)
     {
@@ -220,6 +239,21 @@ public class UIManagerBase : MonoBehaviour
     public void DisableUpgradePaperButton()
     {
         buttonUpgradePaper.interactable = false;
+    }
+
+    public void EnableSliderPaper()
+    {
+        sliderPaper.gameObject.SetActive(true);
+    }
+
+    public void DisableSliderPaper()
+    {
+        sliderPaper.gameObject.SetActive(false);
+    }
+
+    public void UpdateSliderPaper(float value)
+    {
+        sliderPaper.value = value;
     }
 
     ///MÁQUINA DE VIDRO///
@@ -257,6 +291,21 @@ public class UIManagerBase : MonoBehaviour
         buttonUpgradeGlass.interactable = false;
     }
 
+    public void EnableSliderGlass()
+    {
+        sliderGlass.gameObject.SetActive(true);
+    }
+
+    public void DisableSliderGlass()
+    {
+        sliderGlass.gameObject.SetActive(false);
+    }
+
+    public void UpdateSliderGlass(float value)
+    {
+        sliderGlass.value = value;
+    }
+
     ///MÁQUINA DE METAL///
     public void UpdateMetalMachineText(int machineLevel, int cost)
     {
@@ -290,6 +339,21 @@ public class UIManagerBase : MonoBehaviour
     public void DisableUpgradeMetalButton()
     {
         buttonUpgradeMetal.interactable = false;
+    }
+
+    public void EnableSliderMetal()
+    {
+        sliderMetal.gameObject.SetActive(true);
+    }
+
+    public void DisableSliderMetal()
+    {
+        sliderMetal.gameObject.SetActive(false);
+    }
+
+    public void UpdateSliderMetal(float value)
+    {
+        sliderMetal.value = value;
     }
 
     ///PLAYER & ARMA///

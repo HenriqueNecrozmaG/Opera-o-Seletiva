@@ -8,16 +8,16 @@ public class SpawnMachinesAndWeapon : MonoBehaviour
     [SerializeField] private GameObject[] metalMachinePrefab;
     [SerializeField] private GameObject[] weaponPrefab;
 
-    public GameObject plasticMachine;
-    public GameObject paperMachine;
-    public GameObject glassMachine;
-    public GameObject metalMachine;
+    private GameObject plasticMachine;
+    private GameObject paperMachine;
+    private GameObject glassMachine;
+    private GameObject metalMachine;
     private GameObject weapon;
 
-    public RecyclePlastic plasticRecyclingScript;
-    public RecyclePaper paperRecyclingScript;
-    public RecycleGlass glassRecyclingScript;
-    public RecycleMetal metalRecyclingScript;
+    private RecyclePlastic plasticRecyclingScript;
+    private RecyclePaper paperRecyclingScript;
+    private RecycleGlass glassRecyclingScript;
+    private RecycleMetal metalRecyclingScript;
 
     public void SpawnPlasticMachine()
     {

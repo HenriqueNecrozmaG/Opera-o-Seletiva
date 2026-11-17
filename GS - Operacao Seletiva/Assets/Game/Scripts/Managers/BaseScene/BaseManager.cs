@@ -34,6 +34,7 @@ public class BaseManager : MonoBehaviour
         BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
         UpdateMachinePlayerAndWeaponTextsOnStart();
         DisableUpgradeButtons();
+        DisableProgressBars();
         BaseFacade.Instance.MusicPlay(0);
         CurrentState = BaseState.Playing;
     }
@@ -132,6 +133,14 @@ public class BaseManager : MonoBehaviour
         {
             BaseFacade.Instance.DisableUIUpgradeWeaponButton();
         }
+    }
+
+    private void DisableProgressBars()
+    {
+        BaseFacade.Instance.DisableUISliderPlastic();
+        BaseFacade.Instance.DisableUISliderPaper();
+        BaseFacade.Instance.DisableUISliderGlass();
+        BaseFacade.Instance.DisableUISliderMetal();
     }
 
     void Update()

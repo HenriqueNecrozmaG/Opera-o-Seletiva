@@ -3,11 +3,11 @@ using UnityEngine;
 public class Resources : MonoBehaviour
 {
     ///RESOURCES///
-    public static int plastic;
-    public static int paper;
-    public static int glass;
-    public static int metal;
-    public static int money;
+    public static int plastic = 10;
+    public static int paper = 10;
+    public static int glass = 10;
+    public static int metal = 10;
+    public static int money = 10;
 
     ///LEVELS///
     public static int playerLevel = 1;

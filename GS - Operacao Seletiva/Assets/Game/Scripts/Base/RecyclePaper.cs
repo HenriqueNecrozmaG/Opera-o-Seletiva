@@ -6,17 +6,22 @@ public class RecyclePaper : MonoBehaviour
     [SerializeField] private float recycleTime;
     [SerializeField] private int recycleNumber;
     [SerializeField] private int moneyGained;
+
+    private int progress;
+    private float value;
     //private bool isRecycling;
 
     public void PaperRecycle()
     {
         if (Resources.paper > 0)
         {
-            print("Começar Reciclagem");
             //isRecycling = true;
             BaseFacade.Instance.DisableUIRecyclePaperButton();
             BaseFacade.Instance.DisableUIUpgradePaperButton();
             StartCoroutine(RecycleCoroutine());
+            progress = 0;
+            StartCoroutine(Progress());
+            BaseFacade.Instance.EnableUISliderPaper();
         }
         else
         {
@@ -26,26 +31,41 @@ public class RecyclePaper : MonoBehaviour
 
     IEnumerator RecycleCoroutine()
     {
-        print("Reciclando");
-
         yield return new WaitForSeconds(recycleTime);
 
         Resources.paper -= recycleNumber;
         Resources.money += moneyGained;
+        BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
 
         if (Resources.paper > 0)
         {
-            print("Reciclou um material");
-            BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
+            yield return new WaitForSeconds(0.01f);
+
             StartCoroutine(RecycleCoroutine());
+            progress = 0;
+            StartCoroutine(Progress());
         }
         else
         {
-            print("Reciclagem finalizada");
             Resources.paper = 0;
             //isRecycling = false;
             BaseFacade.Instance.EnableUIRecyclePaperButton();
             BaseFacade.Instance.EnableUIUpgradePaperButton();
+            BaseFacade.Instance.DisableUISliderPaper();
+            progress = 0;
+        }
+    }
+
+    IEnumerator Progress()
+    {
+        yield return new WaitForSeconds(1);
+        progress++;
+        value = progress / recycleTime;
+        BaseFacade.Instance.UpdateUISliderPaper(value);
+
+        if (progress < recycleTime)
+        {
+            StartCoroutine(Progress());
         }
     }
 }

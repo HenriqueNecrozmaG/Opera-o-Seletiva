@@ -132,6 +132,21 @@ public class BaseFacade : MonoBehaviour
         uiManager.DisableUpgradePlasticButton();
     }
 
+    public void EnableUISliderPlastic()
+    {
+        uiManager.EnableSliderPlastic();
+    }
+
+    public void DisableUISliderPlastic()
+    {
+        uiManager.DisableSliderPlastic();
+    }
+
+    public void UpdateUISliderPlastic(float value)
+    {
+        uiManager.UpdateSliderPlastic(value);
+    }
+
     ///UI da MÁQUINA de PAPEL///
     public void UpdateUIPaperMachineText(int machineLevel, int cost)
     {
@@ -156,6 +171,21 @@ public class BaseFacade : MonoBehaviour
     public void DisableUIUpgradePaperButton()
     {
         uiManager.DisableUpgradePaperButton();
+    }
+
+    public void EnableUISliderPaper()
+    {
+        uiManager.EnableSliderPaper();
+    }
+
+    public void DisableUISliderPaper()
+    {
+        uiManager.DisableSliderPaper();
+    }
+
+    public void UpdateUISliderPaper(float value)
+    {
+        uiManager.UpdateSliderPaper(value);
     }
 
     ///UI da MÁQUINA de VIDRO///
@@ -184,6 +214,21 @@ public class BaseFacade : MonoBehaviour
         uiManager.DisableUpgradeGlassButton();
     }
 
+    public void EnableUISliderGlass()
+    {
+        uiManager.EnableSliderGlass();
+    }
+
+    public void DisableUISliderGlass()
+    {
+        uiManager.DisableSliderGlass();
+    }
+
+    public void UpdateUISliderGlass(float value)
+    {
+        uiManager.UpdateSliderGlass(value);
+    }
+
     ///UI da MÁQUINA de METAL///
     public void UpdateUIMetalMachineText(int machineLevel, int cost)
     {
@@ -208,6 +253,21 @@ public class BaseFacade : MonoBehaviour
     public void DisableUIUpgradeMetalButton()
     {
         uiManager.DisableUpgradeMetalButton();
+    }
+
+    public void EnableUISliderMetal()
+    {
+        uiManager.EnableSliderMetal();
+    }
+
+    public void DisableUISliderMetal()
+    {
+        uiManager.DisableSliderMetal();
+    }
+
+    public void UpdateUISliderMetal(float value)
+    {
+        uiManager.UpdateSliderMetal(value);
     }
 
     ///UI do PLAYER e da ARMA COLETORA///
