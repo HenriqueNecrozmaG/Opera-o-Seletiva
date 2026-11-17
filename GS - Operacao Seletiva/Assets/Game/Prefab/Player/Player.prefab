@@ -185,11 +185,21 @@ MonoBehaviour:
   - {fileID: 3957300618312962212, guid: 90154aecd3c745540abdce251d01032e, type: 3}
   - {fileID: 3957300618312962212, guid: 89bb3c66e03aaff4ea59b2951a0aaf4f, type: 3}
   - {fileID: 3957300618312962212, guid: 4308169282f7b5f49b1cdb08edf23b1e, type: 3}
-  bulletColor:
+  bulletColorLvl1:
   - {fileID: 2100000, guid: 869eab06143d8644c9fdef3419a831b7, type: 2}
   - {fileID: 2100000, guid: 85da9bb74d4026745b05ecb2c3271459, type: 2}
   - {fileID: 2100000, guid: e5b89ee3d3a882f45851aeebb5c46ec4, type: 2}
   - {fileID: 2100000, guid: 7446784889ce83a478f231437500f9b2, type: 2}
+  bulletColorLvl2:
+  - {fileID: 2100000, guid: 02ddbc0f50ee51442b4fd1dc972613e7, type: 2}
+  - {fileID: 2100000, guid: c6cbf5d5ffe15bf47a32d5d2ac4873dd, type: 2}
+  - {fileID: 2100000, guid: 3b5a79005a015da4e89de10744f3ecde, type: 2}
+  - {fileID: 2100000, guid: 383e5816e16d6a749be337e71ef23d86, type: 2}
+  bulletColorLvl3:
+  - {fileID: 2100000, guid: a4dd052d5feaa6541a9be3dfc0ed5f2e, type: 2}
+  - {fileID: 2100000, guid: 197653d7ee6e5bd4f82df983a16df39d, type: 2}
+  - {fileID: 2100000, guid: aebc3a899ff850d4a880d816aa73b0b4, type: 2}
+  - {fileID: 2100000, guid: e36f439878d09ea498abbd9de101539b, type: 2}
   bulletPosition: {fileID: 5118357671602065754}
   timeToDestroy: 5
   cooldown: 0.5
@@ -226,6 +236,7 @@ MonoBehaviour:
   - 12
   - 15
   punchEffect: {fileID: 3762851483406639087, guid: 5a55443811ddd3f46b6b0dd7122e4c48, type: 3}
+  currentHealth: 0
 --- !u!1 &3633419413055033363
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,17 +3,17 @@ using UnityEngine;
 public class Resources : MonoBehaviour
 {
     ///RESOURCES///
-    public static int plastic = 10;
-    public static int paper = 10;
-    public static int glass = 10;
-    public static int metal = 10;
-    public static int money = 10;
+    public static int plastic;
+    public static int paper;
+    public static int glass;
+    public static int metal;
+    public static int money;
 
     ///LEVELS///
-    public static int playerLevel = 1;
-    public static int weaponLevel = 1;
-    public static int plasticMachineLevel = 1;
-    public static int paperMachineLevel = 1;
-    public static int glassMachineLevel = 1;
-    public static int metalMachineLevel = 1;
+    public static int playerLevel = 3;
+    public static int weaponLevel = 3;
+    public static int plasticMachineLevel = 3;
+    public static int paperMachineLevel = 3;
+    public static int glassMachineLevel = 3;
+    public static int metalMachineLevel = 3;
 }

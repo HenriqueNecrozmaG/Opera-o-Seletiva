@@ -7,15 +7,27 @@ public class RecyclePlastic : MonoBehaviour
     [SerializeField] private int recycleNumber;
     [SerializeField] private int moneyGained;
 
+    private Animator anim;
+
     private int progress;
     private float value;
-    //private bool isRecycling;
+    private bool isRecycling;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        anim.SetBool("pRecycling", isRecycling);
+    }
 
     public void PlasticRecycle()
     {
         if (Resources.plastic > 0)
         {
-            //isRecycling = true;
+            isRecycling = true;
             BaseFacade.Instance.DisableUIRecyclePlasticButton();
             BaseFacade.Instance.DisableUIUpgradePlasticButton();
             StartCoroutine(RecycleCoroutine());
@@ -48,7 +60,7 @@ public class RecyclePlastic : MonoBehaviour
         else
         {
             Resources.plastic = 0;
-            //isRecycling = false;
+            isRecycling = false;
             BaseFacade.Instance.EnableUIRecyclePlasticButton();
             BaseFacade.Instance.EnableUIUpgradePlasticButton();
             BaseFacade.Instance.DisableUISliderPlastic();

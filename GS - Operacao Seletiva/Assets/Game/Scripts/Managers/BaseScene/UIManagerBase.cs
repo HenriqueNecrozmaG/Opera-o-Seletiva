@@ -387,21 +387,21 @@ public class UIManagerBase : MonoBehaviour
 
     public void EnableUpgradePlayerButton()
     {
-        buttonUpgradePlayer.enabled = true;
+        buttonUpgradePlayer.interactable = true;
     }
 
     public void DisableUpgradePlayerButton()
     {
-        buttonUpgradePlayer.enabled = false;
+        buttonUpgradePlayer.interactable = false;
     }
     
     public void EnableUpgradeWeaponButton()
     {
-        buttonUpgradeWeapon.enabled = true;
+        buttonUpgradeWeapon.interactable = true;
     }
 
     public void DisableUpgradeWeaponButton()
     {
-        buttonUpgradeWeapon.enabled = false;
+        buttonUpgradeWeapon.interactable = false;
     }
 }

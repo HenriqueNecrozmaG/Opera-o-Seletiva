@@ -29,7 +29,20 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth--;
         GameFacade.Instance.PlayAudioSoundEffect(6);
-        GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[0]);
+        
+        if (Resources.playerLevel == 1)
+        {
+            GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[0]);
+        }
+        else if (Resources.playerLevel == 2)
+        {
+            GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[1]);
+        }
+        else if (Resources.playerLevel == 3)
+        {
+            GameFacade.Instance.UpdateUIHealthBar(currentHealth, maxHealth[2]);
+        }
+
         GameObject damageEffect = Instantiate(punchEffect);
         damageEffect.transform.position = new Vector3(0f, 1.2f, -5f);
         Destroy(damageEffect, 0.5f);

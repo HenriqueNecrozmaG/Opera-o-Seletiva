@@ -17,7 +17,9 @@ public class PlayerShoot : MonoBehaviour
     [Header("Bullet Settings")]
     [SerializeField] private BulletStats bulletStats;
     [SerializeField] private BulletInstance[] bulletPrefab;
-    [SerializeField] private Material[] bulletColor;
+    [SerializeField] private Material[] bulletColorLvl1;
+    [SerializeField] private Material[] bulletColorLvl2;
+    [SerializeField] private Material[] bulletColorLvl3;
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float timeToDestroy;
     [SerializeField] private float cooldown;
@@ -49,24 +51,80 @@ public class PlayerShoot : MonoBehaviour
 
     void SetBullets()
     {
+        ///PLASTIC BULLET///
         plasticBullet = bulletStats.Clone();
         plasticBullet.bulletName = "PlasticBullet";
-        plasticBullet.bulletMaterial = bulletColor[0];
+        
+        if (Resources.weaponLevel == 1)
+        {
+            plasticBullet.bulletMaterial = bulletColorLvl1[0];
+        }
+        else if (Resources.weaponLevel == 2)
+        {
+            plasticBullet.bulletMaterial = bulletColorLvl2[0];
+        }
+        else if (Resources.weaponLevel == 3)
+        {
+            plasticBullet.bulletMaterial = bulletColorLvl3[0];
+        }
+
         plasticBullet.materialIndex = 0;
 
+        ///PAPER BULLET///
         paperBullet = bulletStats.Clone();
         paperBullet.bulletName = "PaperBullet";
-        paperBullet.bulletMaterial = bulletColor[1];
+
+        if (Resources.weaponLevel == 1)
+        {
+            paperBullet.bulletMaterial = bulletColorLvl1[1];
+        }
+        else if (Resources.weaponLevel == 2)
+        {
+            paperBullet.bulletMaterial = bulletColorLvl2[1];
+        }
+        else if (Resources.weaponLevel == 3)
+        {
+            paperBullet.bulletMaterial = bulletColorLvl3[1];
+        }
+
         paperBullet.materialIndex = 1;
 
+        ///GLASS BULLET///
         glassBullet = bulletStats.Clone();
         glassBullet.bulletName = "GlassBullet";
-        glassBullet.bulletMaterial = bulletColor[2];
+
+        if (Resources.weaponLevel == 1)
+        {
+            glassBullet.bulletMaterial = bulletColorLvl1[2];
+        }
+        else if (Resources.weaponLevel == 2)
+        {
+            glassBullet.bulletMaterial = bulletColorLvl2[2];
+        }
+        else if (Resources.weaponLevel == 3)
+        {
+            glassBullet.bulletMaterial = bulletColorLvl3[2];
+        }
+
         glassBullet.materialIndex = 2;
 
+        ///METAL BULLET///
         metalBullet = bulletStats.Clone();
         metalBullet.bulletName = "MetalBullet";
-        metalBullet.bulletMaterial = bulletColor[3];
+
+        if (Resources.weaponLevel == 1)
+        {
+            metalBullet.bulletMaterial = bulletColorLvl1[3];
+        }
+        else if (Resources.weaponLevel == 2)
+        {
+            metalBullet.bulletMaterial = bulletColorLvl2[3];
+        }
+        else if (Resources.weaponLevel == 3)
+        {
+            metalBullet.bulletMaterial = bulletColorLvl3[3];
+        }
+
         metalBullet.materialIndex = 3;
     }
 
