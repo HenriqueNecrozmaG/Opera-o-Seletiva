@@ -106,6 +106,11 @@ public class BaseFacade : MonoBehaviour
         uiManager.HideMaterialMessagePanel();
     }
 
+    public void DisableUIMoneyIcon(int i)
+    {
+        uiManager.DisableMoneyIcon(i);
+    }
+
     ///UI da MÁQUINA de PLÁSTICO///
     public void UpdateUIPlasticMachineText(int machineLevel, int cost)
     {

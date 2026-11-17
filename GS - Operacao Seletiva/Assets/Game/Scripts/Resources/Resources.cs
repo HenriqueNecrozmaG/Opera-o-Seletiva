@@ -10,10 +10,10 @@ public class Resources : MonoBehaviour
     public static int money;
 
     ///LEVELS///
-    public static int playerLevel = 3;
-    public static int weaponLevel = 3;
-    public static int plasticMachineLevel = 3;
-    public static int paperMachineLevel = 3;
-    public static int glassMachineLevel = 3;
-    public static int metalMachineLevel = 3;
+    public static int playerLevel = 1;
+    public static int weaponLevel = 1;
+    public static int plasticMachineLevel = 1;
+    public static int paperMachineLevel = 1;
+    public static int glassMachineLevel = 1;
+    public static int metalMachineLevel = 1;
 }

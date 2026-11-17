@@ -107,31 +107,37 @@ public class BaseManager : MonoBehaviour
         if (Resources.plasticMachineLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradePlasticButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(0);
         }
 
         if (Resources.paperMachineLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradePaperButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(1);
         }
 
         if (Resources.glassMachineLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradeGlassButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(2);
         }
 
         if (Resources.metalMachineLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradeMetalButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(3);
         }
 
         if (Resources.playerLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradePlayerButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(4);
         }
 
         if (Resources.weaponLevel >= 3)
         {
             BaseFacade.Instance.DisableUIUpgradeWeaponButton();
+            BaseFacade.Instance.DisableUIMoneyIcon(5);
         }
     }
 
@@ -231,6 +237,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIPlasticMachineText(Resources.plasticMachineLevel, machineUpgradeCost[1]);
                 BaseFacade.Instance.SpawnerUpgradePlasticMachine();
                 BaseFacade.Instance.DisableUIUpgradePlasticButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(0);
                 return;
             }
             else
@@ -271,6 +278,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIPaperMachineText(Resources.paperMachineLevel, machineUpgradeCost[1]);
                 BaseFacade.Instance.SpawnerUpgradePaperMachine();
                 BaseFacade.Instance.DisableUIUpgradePaperButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(1);
                 return;
             }
             else
@@ -311,6 +319,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIGlassMachineText(Resources.glassMachineLevel, machineUpgradeCost[1]);
                 BaseFacade.Instance.SpawnerUpgradeGlassMachine();
                 BaseFacade.Instance.DisableUIUpgradeGlassButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(2);
                 return;
             }
             else
@@ -351,6 +360,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIMetalMachineText(Resources.metalMachineLevel, machineUpgradeCost[1]);
                 BaseFacade.Instance.SpawnerUpgradeMetalMachine();
                 BaseFacade.Instance.DisableUIUpgradeMetalButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(3);
                 return;
             }
             else
@@ -389,6 +399,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
                 BaseFacade.Instance.UpdateUIPlayerText(Resources.playerLevel, playerUpgradeCost[1]);
                 BaseFacade.Instance.DisableUIUpgradePlayerButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(4);
                 return;
             }
             else
@@ -429,6 +440,7 @@ public class BaseManager : MonoBehaviour
                 BaseFacade.Instance.UpdateUIWeaponText(Resources.weaponLevel, weaponUpgradeCost[1]);
                 BaseFacade.Instance.SpawnerUpgradeWeapon();
                 BaseFacade.Instance.DisableUIUpgradeWeaponButton();
+                BaseFacade.Instance.DisableUIMoneyIcon(5);
                 return;
             }
             else

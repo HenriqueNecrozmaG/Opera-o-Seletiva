@@ -60,6 +60,9 @@ public class UIManagerBase : MonoBehaviour
     [SerializeField] private Button buttonUpgradePlayer;
     [SerializeField] private Button buttonUpgradeWeapon;
 
+    [Header("Money Icon Settings")]
+    [SerializeField] private Image[] moneyIcon;
+
     public void ShowHUD()
     {
         panelHUD.SetActive(true);
@@ -156,6 +159,11 @@ public class UIManagerBase : MonoBehaviour
         panelMessageMaterial.SetActive(false);
     }
 
+    public void DisableMoneyIcon(int i)
+    {
+        moneyIcon[i].enabled = false;
+    }
+
     ///MÁQUINA DE PLÁSTICO///
     public void UpdatePlasticMachineText(int machineLevel, int cost)
     {
@@ -163,7 +171,7 @@ public class UIManagerBase : MonoBehaviour
 
         if (machineLevel < 3)
         {
-            textPlasticMachineUpgradeCost.text = "Melhorar: " + cost;
+            textPlasticMachineUpgradeCost.text = cost.ToString();
         }
         else
         {
@@ -213,7 +221,7 @@ public class UIManagerBase : MonoBehaviour
 
         if (machineLevel < 3)
         {
-            textPaperMachineUpgradeCost.text = "Melhorar: " + cost;
+            textPaperMachineUpgradeCost.text = cost.ToString();
         }
         else
         {
@@ -263,7 +271,7 @@ public class UIManagerBase : MonoBehaviour
 
         if (machineLevel < 3)
         {
-            textGlassMachineUpgradeCost.text = "Melhorar: " + cost;
+            textGlassMachineUpgradeCost.text = cost.ToString();
         }
         else
         {
@@ -313,7 +321,7 @@ public class UIManagerBase : MonoBehaviour
 
         if (machineLevel < 3)
         {
-            textMetalMachineUpgradeCost.text = "Melhorar: " + cost;
+            textMetalMachineUpgradeCost.text = cost.ToString();
         }
         else
         {
@@ -357,13 +365,13 @@ public class UIManagerBase : MonoBehaviour
     }
 
     ///PLAYER & ARMA///
-    public void UpdatePlayerText(int playerLevel, int playerCost)
+    public void UpdatePlayerText(int playerLevel, int cost)
     {
         textPlayerLevel.text = "Jogador - Lvl " + playerLevel;;
 
         if (playerLevel < 3)
         {
-            textPlayerUpgradeCost.text = "Melhorar Jogador: " + playerCost;
+            textPlayerUpgradeCost.text = cost.ToString();
         }
         else
         {
@@ -371,13 +379,13 @@ public class UIManagerBase : MonoBehaviour
         }
     }
 
-    public void UpdateWeaponText(int weaponLevel, int weaponCost)
+    public void UpdateWeaponText(int weaponLevel, int cost)
     {
         textWeaponLevel.text = "Arma Coletora - Lvl " + weaponLevel;
 
         if (weaponLevel < 3)
         {
-            textWeaponUpgradeCost.text = "Melhorar Arma: " + weaponCost;
+            textWeaponUpgradeCost.text = cost.ToString();
         }
         else
         {
