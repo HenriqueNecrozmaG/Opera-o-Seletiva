@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3149011907999263213}
   - component: {fileID: 8554409300167814127}
   - component: {fileID: 6378707936789473774}
+  - component: {fileID: 201824698205144191}
   m_Layer: 0
   m_Name: MetalRecyclingMachineLvl3
   m_TagString: Untagged
@@ -112,3 +113,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &201824698205144191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414474020657539567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52010a950d1419f458cdfb648831efa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecycleMetal
+  recycleTime: 4
+  recycleNumber: 1
+  moneyGained: 1

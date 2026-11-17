@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float[] maxHealth;
     public GameObject punchEffect;
 
-    private float currentHealth;
+    public float currentHealth;
 
     void Start()
     {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8422966909600150913}
   - component: {fileID: 9017659381111030036}
   - component: {fileID: 2538409621831822785}
+  - component: {fileID: -5143518289576042321}
   m_Layer: 0
   m_Name: PaperRecyclingMachineLvl2
   m_TagString: Untagged
@@ -112,3 +113,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5143518289576042321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3841715097537036173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84a50c756f00b64fac3c6a1711f9eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecyclePaper
+  recycleTime: 7
+  recycleNumber: 1
+  moneyGained: 1

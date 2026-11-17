@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class UIManagerBase : MonoBehaviour
     [SerializeField] private GameObject panelGlass;
     [SerializeField] private GameObject panelMetal;
     [SerializeField] private GameObject panelWeapon;
+    [SerializeField] private GameObject panelMessageMoney;
+    [SerializeField] private GameObject panelMessageMaterial;
 
     [Header("HUD Settings")]
     [SerializeField] private TextMeshProUGUI textPlastic;
@@ -63,6 +66,8 @@ public class UIManagerBase : MonoBehaviour
         panelGlass.SetActive(false);
         panelMetal.SetActive(false);
         panelWeapon.SetActive(false);
+        panelMessageMoney.SetActive(false);
+        panelMessageMaterial.SetActive(false);
     }
 
     public void ShowPlasticPanel()
@@ -127,122 +132,193 @@ public class UIManagerBase : MonoBehaviour
         panelOptions.SetActive(false);
     }
 
+    public void ShowMoneyMessagePanel()
+    {
+        panelMessageMoney.SetActive(true);
+    }
+
+    public void HideMoneyMessagePanel()
+    {
+        panelMessageMoney.SetActive(false);
+    }
+
+    public void ShowMaterialMessagePanel()
+    {
+        panelMessageMaterial.SetActive(true);
+    }
+
+    public void HideMaterialMessagePanel()
+    {
+        panelMessageMaterial.SetActive(false);
+    }
+
     ///MÁQUINA DE PLÁSTICO///
     public void UpdatePlasticMachineText(int machineLevel, int cost)
     {
         textPlasticMachineLevel.text = "Máquina de Reciclagem de Plástico\nLvl " + machineLevel;
-        textPlasticMachineUpgradeCost.text = "Melhorar: " + cost;
+
+        if (machineLevel < 3)
+        {
+            textPlasticMachineUpgradeCost.text = "Melhorar: " + cost;
+        }
+        else
+        {
+            textPlasticMachineUpgradeCost.text = "Melhorado completamente";
+        }
     }
 
     public void EnableRecyclePlasticButton()
     {
-        buttonRecyclePlastic.enabled = true;
+        buttonRecyclePlastic.interactable = true;
     }
     
     public void DisableRecyclePlasticButton()
     {
-        buttonRecyclePlastic.enabled = false;
+        buttonRecyclePlastic.interactable = false;
     }
 
     public void EnableUpgradePlasticButton()
     {
-        buttonUpgradePlastic.enabled = true;
+        buttonUpgradePlastic.interactable = true;
     }
 
     public void DisableUpgradePlasticButton()
     {
-        buttonUpgradePlastic.enabled = false;
+        buttonUpgradePlastic.interactable = false;
     }
 
     ///MÁQUINA DE PAPEL///
     public void UpdatePaperMachineText(int machineLevel, int cost)
     {
         textPaperMachineLevel.text = "Máquina de Reciclagem de Papel\nLvl " + machineLevel;
-        textPaperMachineUpgradeCost.text = "Melhorar: " + cost;
+
+        if (machineLevel < 3)
+        {
+            textPaperMachineUpgradeCost.text = "Melhorar: " + cost;
+        }
+        else
+        {
+            textPaperMachineUpgradeCost.text = "Melhorado completamente";
+        }
     }
 
     public void EnableRecyclePaperButton()
     {
-        buttonRecyclePaper.enabled = true;
+        buttonRecyclePaper.interactable = true;
     }
 
     public void DisableRecyclePaperButton()
     {
-        buttonRecyclePaper.enabled = false;
+        buttonRecyclePaper.interactable = false;
     }
 
     public void EnableUpgradePaperButton()
     {
-        buttonUpgradePaper.enabled = true;
+        buttonUpgradePaper.interactable = true;
     }
 
     public void DisableUpgradePaperButton()
     {
-        buttonUpgradePaper.enabled = false;
+        buttonUpgradePaper.interactable = false;
     }
 
     ///MÁQUINA DE VIDRO///
     public void UpdateGlassMachineText(int machineLevel, int cost)
     {
         textGlassMachineLevel.text = "Máquina de Reciclagem de Vidro\nLvl " + machineLevel;
-        textGlassMachineUpgradeCost.text = "Melhorar: " + cost;
+
+        if (machineLevel < 3)
+        {
+            textGlassMachineUpgradeCost.text = "Melhorar: " + cost;
+        }
+        else
+        {
+            textGlassMachineUpgradeCost.text = "Melhorado completamente";
+        }
     }
 
     public void EnableRecycleGlassButton()
     {
-        buttonRecycleGlass.enabled = true;
+        buttonRecycleGlass.interactable = true;
     }
 
     public void DisableRecycleGlassButton()
     {
-        buttonRecycleGlass.enabled = false;
+        buttonRecycleGlass.interactable = false;
     }
 
     public void EnableUpgradeGlassButton()
     {
-        buttonUpgradeGlass.enabled = true;
+        buttonUpgradeGlass.interactable = true;
     }
 
-    public void DisableUpgradeGlasscButton()
+    public void DisableUpgradeGlassButton()
     {
-        buttonUpgradeGlass.enabled = false;
+        buttonUpgradeGlass.interactable = false;
     }
 
     ///MÁQUINA DE METAL///
-    public void UpdateMetalMachineText(int metalMachineLevel, int cost)
+    public void UpdateMetalMachineText(int machineLevel, int cost)
     {
-        textMetalMachineLevel.text = "Máquina de Reciclagem de Metal\nLvl " + metalMachineLevel;
-        textMetalMachineUpgradeCost.text = "Melhorar: " + cost;
+        textMetalMachineLevel.text = "Máquina de Reciclagem de Metal\nLvl " + machineLevel;
+
+        if (machineLevel < 3)
+        {
+            textMetalMachineUpgradeCost.text = "Melhorar: " + cost;
+        }
+        else
+        {
+            textMetalMachineUpgradeCost.text = "Melhorado completamente";
+        }
     }
 
     public void EnableRecycleMetalButton()
     {
-        buttonRecycleMetal.enabled = true;
+        buttonRecycleMetal.interactable = true;
     }
 
     public void DisableRecycleMetalButton()
     {
-        buttonRecycleMetal.enabled = false;
+        buttonRecycleMetal.interactable = false;
     }
 
     public void EnableUpgradeMetalButton()
     {
-        buttonUpgradeMetal.enabled = true;
+        buttonUpgradeMetal.interactable = true;
     }
 
     public void DisableUpgradeMetalButton()
     {
-        buttonUpgradeMetal.enabled = false;
+        buttonUpgradeMetal.interactable = false;
     }
 
     ///PLAYER & ARMA///
-    public void UpdatePlayerGunText(int playerLevel, int playerCost, int weaponLevel, int weaponCost)
+    public void UpdatePlayerText(int playerLevel, int playerCost)
     {
-        textPlayerLevel.text = "Jogador - Lvl " + playerLevel;
-        textPlayerUpgradeCost.text = "Melhorar: " + playerCost;
+        textPlayerLevel.text = "Jogador - Lvl " + playerLevel;;
 
-        textPlayerLevel.text = "Arma Coletora - Lvl " + weaponLevel;
-        textPlayerUpgradeCost.text = "Melhorar: " + weaponCost;
+        if (playerLevel < 3)
+        {
+            textPlayerUpgradeCost.text = "Melhorar Jogador: " + playerCost;
+        }
+        else
+        {
+            textPlayerUpgradeCost.text = "Melhorado completamente";
+        }
+    }
+
+    public void UpdateWeaponText(int weaponLevel, int weaponCost)
+    {
+        textWeaponLevel.text = "Arma Coletora - Lvl " + weaponLevel;
+
+        if (weaponLevel < 3)
+        {
+            textWeaponUpgradeCost.text = "Melhorar Arma: " + weaponCost;
+        }
+        else
+        {
+            textWeaponUpgradeCost.text = "Melhorado completamente";
+        }
     }
 
     public void EnableUpgradePlayerButton()
