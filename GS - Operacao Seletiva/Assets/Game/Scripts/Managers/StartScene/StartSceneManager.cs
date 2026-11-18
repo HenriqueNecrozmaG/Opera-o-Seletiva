@@ -8,14 +8,9 @@ public class StartSceneManager : MonoBehaviour
     [SerializeField] private GameObject panelOptions;
     [SerializeField] private GameObject panelConfirm;
 
-    private float plasticSave;
-    //private int paperSave;
-    //private int glassSave;
-    //private int metalSave;
-
     void Awake()
     {
-        //LoadResources();
+        LoadResources();
     }
 
     void Start()
@@ -23,35 +18,6 @@ public class StartSceneManager : MonoBehaviour
         musicManager.Play(0);
         panelOptions.SetActive(false);
         panelConfirm.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            PlayerPrefs.SetFloat("plastic", Resources.plastic);
-            //PlayerPrefs.SetInt("Paper", Resources.paper);
-            //PlayerPrefs.SetInt("Glass", Resources.glass);
-            //PlayerPrefs.SetInt("Metal", Resources.metal);
-            print("Salvando valores");
-        }
-        
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            PlayerPrefs.GetFloat("plastic", plasticSave);
-            //PlayerPrefs.GetInt("Paper", paperSave);
-            //PlayerPrefs.GetInt("Glass", glassSave);
-            //PlayerPrefs.GetInt("Metal", metalSave);
-            print("Resgatando valores");
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            print(plasticSave);
-            //print(paperSave);
-            //print(glassSave);
-            //print(metalSave);
-        }
     }
 
     public void Play()
@@ -80,7 +46,7 @@ public class StartSceneManager : MonoBehaviour
 
     public void Quit()
     {
-        //SaveResources();
+        SaveResources();
         audioManager.PlaySoundEffect(0);
         StartCoroutine(QuitCoroutine());
     }
@@ -94,7 +60,7 @@ public class StartSceneManager : MonoBehaviour
 
     public void ClearProgress()
     {
-        //ClearResources();
+        ClearResources();
         audioManager.PlaySoundEffect(0);
         panelConfirm.SetActive(true);
     }
@@ -110,7 +76,7 @@ public class StartSceneManager : MonoBehaviour
         panelConfirm.SetActive(false);
     }
 
-    /*public void SaveResources()
+    public void SaveResources()
     {
         PlayerPrefs.SetInt("Plastic", Resources.plastic);
         PlayerPrefs.SetInt("Paper", Resources.paper);
@@ -128,18 +94,18 @@ public class StartSceneManager : MonoBehaviour
 
     public void LoadResources()
     {
-        PlayerPrefs.GetInt("Plastic", Resources.plastic);
-        PlayerPrefs.GetInt("Paper", Resources.paper);
-        PlayerPrefs.GetInt("Glass", Resources.glass);
-        PlayerPrefs.GetInt("Metal", Resources.metal);
-        PlayerPrefs.GetInt("Money", Resources.money);
+        Resources.plastic = PlayerPrefs.GetInt("Plastic");
+        Resources.paper = PlayerPrefs.GetInt("Paper");
+        Resources.glass = PlayerPrefs.GetInt("Glass");
+        Resources.metal = PlayerPrefs.GetInt("Metal");
+        Resources.money = PlayerPrefs.GetInt("Money");
 
-        PlayerPrefs.GetInt("PlayerLevel", Resources.playerLevel);
-        PlayerPrefs.GetInt("WeaponLevel", Resources.weaponLevel);
-        PlayerPrefs.GetInt("PlasticMachineLevel", Resources.plasticMachineLevel);
-        PlayerPrefs.GetInt("PaperMachineLevel", Resources.paperMachineLevel);
-        PlayerPrefs.GetInt("GlassMachineLevel", Resources.glassMachineLevel);
-        PlayerPrefs.GetInt("MetalMachineLevel", Resources.metalMachineLevel);
+        Resources.playerLevel = PlayerPrefs.GetInt("PlayerLevel");
+        Resources.weaponLevel = PlayerPrefs.GetInt("WeaponLevel");
+        Resources.plasticMachineLevel = PlayerPrefs.GetInt("PlasticMachineLevel");
+        Resources.paperMachineLevel = PlayerPrefs.GetInt("PaperMachineLevel");
+        Resources.glassMachineLevel = PlayerPrefs.GetInt("GlassMachineLevel");
+        Resources.metalMachineLevel = PlayerPrefs.GetInt("MetalMachineLevel");
     }
 
     public void ClearResources()
@@ -169,5 +135,5 @@ public class StartSceneManager : MonoBehaviour
         PlayerPrefs.SetInt("PaperMachineLevel", Resources.paperMachineLevel);
         PlayerPrefs.SetInt("GlassMachineLevel", Resources.glassMachineLevel);
         PlayerPrefs.SetInt("MetalMachineLevel", Resources.metalMachineLevel);
-    }*/
+    }
 }
