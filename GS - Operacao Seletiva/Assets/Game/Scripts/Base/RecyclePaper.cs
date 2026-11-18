@@ -48,6 +48,7 @@ public class RecyclePaper : MonoBehaviour
         Resources.paper -= recycleNumber;
         Resources.money += moneyGained;
         BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
+        BaseFacade.Instance.PlayAudioSoundEffect(3);
 
         if (Resources.paper > 0)
         {

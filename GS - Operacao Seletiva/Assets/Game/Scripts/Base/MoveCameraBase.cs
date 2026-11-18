@@ -23,7 +23,7 @@ public class MoveCameraBase : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            BaseFacade.Instance.PlayAudioSoundEffect(0);
+            BaseFacade.Instance.PlayAudioSoundEffect(1);
 
             if (transform.position.x < 73)
             {
@@ -58,7 +58,7 @@ public class MoveCameraBase : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            BaseFacade.Instance.PlayAudioSoundEffect(0);
+            BaseFacade.Instance.PlayAudioSoundEffect(1);
 
             if (transform.position.x > 5)
             {

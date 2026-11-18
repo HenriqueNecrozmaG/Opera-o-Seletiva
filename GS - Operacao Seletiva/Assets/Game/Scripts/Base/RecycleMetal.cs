@@ -48,6 +48,7 @@ public class RecycleMetal : MonoBehaviour
         Resources.metal -= recycleNumber;
         Resources.money += moneyGained;
         BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
+        BaseFacade.Instance.PlayAudioSoundEffect(3);
 
         if (Resources.metal > 0)
         {

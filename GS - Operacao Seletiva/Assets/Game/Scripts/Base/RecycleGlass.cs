@@ -48,6 +48,7 @@ public class RecycleGlass : MonoBehaviour
         Resources.glass -= recycleNumber;
         Resources.money += moneyGained;
         BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
+        BaseFacade.Instance.PlayAudioSoundEffect(3);
 
         if (Resources.glass > 0)
         {
