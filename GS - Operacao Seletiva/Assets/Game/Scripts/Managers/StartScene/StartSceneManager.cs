@@ -44,7 +44,7 @@ public class StartSceneManager : MonoBehaviour
         panelOptions.SetActive(false);
     }
 
-    public void Quit()
+    public void SaveAndQuit()
     {
         SaveResources();
         audioManager.PlaySoundEffect(0);
@@ -60,7 +60,6 @@ public class StartSceneManager : MonoBehaviour
 
     public void ClearProgress()
     {
-        ClearResources();
         audioManager.PlaySoundEffect(0);
         panelConfirm.SetActive(true);
     }
@@ -68,6 +67,8 @@ public class StartSceneManager : MonoBehaviour
     public void ConfirmClear()
     {
         audioManager.PlaySoundEffect(0);
+        ClearResources();
+        panelConfirm.SetActive(false);
     }
 
     public void DeclineClear()
@@ -94,18 +95,51 @@ public class StartSceneManager : MonoBehaviour
 
     public void LoadResources()
     {
-        Resources.plastic = PlayerPrefs.GetInt("Plastic");
-        Resources.paper = PlayerPrefs.GetInt("Paper");
-        Resources.glass = PlayerPrefs.GetInt("Glass");
-        Resources.metal = PlayerPrefs.GetInt("Metal");
-        Resources.money = PlayerPrefs.GetInt("Money");
+        if (PlayerPrefs.GetInt("Plastic") > 0)
+        {
+            Resources.plastic = PlayerPrefs.GetInt("Plastic");
+        }
+        if (PlayerPrefs.GetInt("Paper") > 0)
+        {
+            Resources.paper = PlayerPrefs.GetInt("Paper");
+        }
+        if (PlayerPrefs.GetInt("Glass") > 0)
+        {
+            Resources.glass = PlayerPrefs.GetInt("Glass");
+        }
+        if (PlayerPrefs.GetInt("Metal") > 0)
+        {
+            Resources.metal = PlayerPrefs.GetInt("Metal");
+        }
+        if (PlayerPrefs.GetInt("Money") > 0)
+        {
+            Resources.money = PlayerPrefs.GetInt("Money");
+        }
 
-        Resources.playerLevel = PlayerPrefs.GetInt("PlayerLevel");
-        Resources.weaponLevel = PlayerPrefs.GetInt("WeaponLevel");
-        Resources.plasticMachineLevel = PlayerPrefs.GetInt("PlasticMachineLevel");
-        Resources.paperMachineLevel = PlayerPrefs.GetInt("PaperMachineLevel");
-        Resources.glassMachineLevel = PlayerPrefs.GetInt("GlassMachineLevel");
-        Resources.metalMachineLevel = PlayerPrefs.GetInt("MetalMachineLevel");
+        if (PlayerPrefs.GetInt("PlayerLevel") > 1)
+        {
+            Resources.playerLevel = PlayerPrefs.GetInt("PlayerLevel");
+        }
+        if (PlayerPrefs.GetInt("WeaponLevel") > 1)
+        {
+            Resources.weaponLevel = PlayerPrefs.GetInt("WeaponLevel");
+        }
+        if (PlayerPrefs.GetInt("PlasticMachineLevel") > 1)
+        {
+            Resources.plasticMachineLevel = PlayerPrefs.GetInt("PlasticMachineLevel");
+        }
+        if (PlayerPrefs.GetInt("PaperMachineLevel") > 1)
+        {
+            Resources.paperMachineLevel = PlayerPrefs.GetInt("PaperMachineLevel");
+        }
+        if (PlayerPrefs.GetInt("GlassMachineLevel") > 1)
+        {
+            Resources.glassMachineLevel = PlayerPrefs.GetInt("GlassMachineLevel");
+        }
+        if (PlayerPrefs.GetInt("MetalMachineLevel") > 1)
+        {
+            Resources.metalMachineLevel = PlayerPrefs.GetInt("MetalMachineLevel");
+        }
     }
 
     public void ClearResources()

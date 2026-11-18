@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 220311978}
   - component: {fileID: 220311977}
   m_Layer: 5
-  m_Name: TextQuit
+  m_Name: TextSaveAndQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sair
+  m_text: Salvar e Sair
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f281eb6417869b64baabd07d060e2ab0, type: 2}
   m_sharedMaterial: {fileID: 6255464705997431170, guid: f281eb6417869b64baabd07d060e2ab0, type: 2}
@@ -2391,7 +2391,7 @@ GameObject:
   - component: {fileID: 1503179046}
   - component: {fileID: 1503179045}
   m_Layer: 5
-  m_Name: ButtonQuit
+  m_Name: ButtonSaveAndQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2463,7 +2463,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1488209295}
         m_TargetAssemblyTypeName: StartSceneManager, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: SaveAndQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
