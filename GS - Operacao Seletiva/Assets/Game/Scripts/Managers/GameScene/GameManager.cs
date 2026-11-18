@@ -163,11 +163,6 @@ public class GameManager : MonoBehaviour
         Resources.paper += paperQuantity;
         Resources.glass += glassQuantity;
         Resources.metal += metalQuantity;
-
-        print("Plastic: " + Resources.plastic);
-        print("Paper: " + Resources.paper);
-        print("Glass: " + Resources.glass);
-        print("Metal: " + Resources.metal);
     }
 
     IEnumerator CountTime()

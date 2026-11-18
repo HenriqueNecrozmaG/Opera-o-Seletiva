@@ -27,6 +27,7 @@ public class RecyclePlastic : MonoBehaviour
     {
         if (Resources.plastic > 0)
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(2);
             isRecycling = true;
             BaseFacade.Instance.DisableUIRecyclePlasticButton();
             BaseFacade.Instance.DisableUIUpgradePlasticButton();
@@ -37,6 +38,7 @@ public class RecyclePlastic : MonoBehaviour
         }
         else
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(0);
             BaseFacade.Instance.ShowUIMaterialMessagePanel();
         }
     }

@@ -27,6 +27,7 @@ public class RecycleGlass : MonoBehaviour
     {
         if (Resources.glass > 0)
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(2);
             isRecycling = true;
             BaseFacade.Instance.DisableUIRecycleGlassButton();
             BaseFacade.Instance.DisableUIUpgradeGlassButton();
@@ -37,6 +38,7 @@ public class RecycleGlass : MonoBehaviour
         }
         else
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(0);
             BaseFacade.Instance.ShowUIMaterialMessagePanel();
         }
     }

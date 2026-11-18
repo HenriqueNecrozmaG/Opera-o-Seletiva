@@ -27,6 +27,7 @@ public class RecycleMetal : MonoBehaviour
     {
         if (Resources.metal > 0)
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(2);
             isRecycling = true;
             BaseFacade.Instance.DisableUIRecycleMetalButton();
             BaseFacade.Instance.DisableUIUpgradeMetalButton();
@@ -37,6 +38,7 @@ public class RecycleMetal : MonoBehaviour
         }
         else
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(0);
             BaseFacade.Instance.ShowUIMaterialMessagePanel();
         }
     }

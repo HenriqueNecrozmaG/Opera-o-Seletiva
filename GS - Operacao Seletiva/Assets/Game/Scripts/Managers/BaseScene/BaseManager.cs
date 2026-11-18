@@ -213,6 +213,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[0];
                 Resources.plasticMachineLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -222,6 +223,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -231,6 +233,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[1];
                 Resources.plasticMachineLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -242,6 +245,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -254,6 +258,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[0];
                 Resources.paperMachineLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -263,6 +268,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -272,6 +278,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[1];
                 Resources.paperMachineLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -283,6 +290,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -295,6 +303,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[0];
                 Resources.glassMachineLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -304,6 +313,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -313,6 +323,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[1];
                 Resources.glassMachineLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -324,6 +335,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -336,6 +348,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[0];
                 Resources.metalMachineLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -345,6 +358,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -354,6 +368,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= machineUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= machineUpgradeCost[1];
                 Resources.metalMachineLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -365,6 +380,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -377,6 +393,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= playerUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= playerUpgradeCost[0];
                 Resources.playerLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -385,6 +402,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -394,6 +412,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= playerUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= playerUpgradeCost[1];
                 Resources.playerLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -404,6 +423,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -416,6 +436,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= weaponUpgradeCost[0])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= weaponUpgradeCost[0];
                 Resources.weaponLevel = 2;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -425,6 +446,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }
@@ -434,6 +456,7 @@ public class BaseManager : MonoBehaviour
         {
             if (Resources.money >= weaponUpgradeCost[1])
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(4);
                 Resources.money -= weaponUpgradeCost[1];
                 Resources.weaponLevel = 3;
                 BaseFacade.Instance.UpdateUIResourcesText(Resources.plastic, Resources.paper, Resources.glass, Resources.metal, Resources.money);
@@ -445,6 +468,7 @@ public class BaseManager : MonoBehaviour
             }
             else
             {
+                BaseFacade.Instance.PlayAudioSoundEffect(0);
                 BaseFacade.Instance.ShowUIMoneyMessagePanel();
                 return;
             }

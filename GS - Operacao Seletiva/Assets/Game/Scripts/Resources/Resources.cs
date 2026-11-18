@@ -7,7 +7,7 @@ public class Resources : MonoBehaviour
     public static int paper = 10;
     public static int glass = 10;
     public static int metal = 10;
-    public static int money = 999;
+    public static int money;
 
     ///LEVELS///
     public static int playerLevel = 1;

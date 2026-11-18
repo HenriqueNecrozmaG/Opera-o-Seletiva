@@ -27,6 +27,7 @@ public class RecyclePaper : MonoBehaviour
     {
         if (Resources.paper > 0)
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(2);
             isRecycling = true;
             BaseFacade.Instance.DisableUIRecyclePaperButton();
             BaseFacade.Instance.DisableUIUpgradePaperButton();
@@ -37,6 +38,7 @@ public class RecyclePaper : MonoBehaviour
         }
         else
         {
+            BaseFacade.Instance.PlayAudioSoundEffect(0);
             BaseFacade.Instance.ShowUIMaterialMessagePanel();
         }
     }
