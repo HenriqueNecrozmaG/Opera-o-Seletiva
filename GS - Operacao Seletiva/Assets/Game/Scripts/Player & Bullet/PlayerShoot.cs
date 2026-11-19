@@ -1,6 +1,4 @@
 using System.Collections;
-using TMPro;
-using UnityEditor.Compilation;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour

@@ -16,6 +16,7 @@ public class StartSceneManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         musicManager.Play(0);
         panelOptions.SetActive(false);
         panelControls.SetActive(false);
@@ -67,8 +68,9 @@ public class StartSceneManager : MonoBehaviour
 
     IEnumerator QuitCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
+        print("Saiu");
         Application.Quit();
     }
 

@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
     public void Return()
     {
         GameFacade.Instance.PlayAudioSoundEffect(0);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("StartScene");
     }
 
