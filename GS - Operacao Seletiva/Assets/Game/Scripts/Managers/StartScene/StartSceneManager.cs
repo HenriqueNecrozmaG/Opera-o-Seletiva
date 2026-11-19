@@ -6,6 +6,7 @@ public class StartSceneManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private MusicManager musicManager;
     [SerializeField] private GameObject panelOptions;
+    [SerializeField] private GameObject panelControls;
     [SerializeField] private GameObject panelConfirm;
 
     void Awake()
@@ -17,6 +18,7 @@ public class StartSceneManager : MonoBehaviour
     {
         musicManager.Play(0);
         panelOptions.SetActive(false);
+        panelControls.SetActive(false);
         panelConfirm.SetActive(false);
     }
 
@@ -42,6 +44,18 @@ public class StartSceneManager : MonoBehaviour
     {
         audioManager.PlaySoundEffect(0);
         panelOptions.SetActive(false);
+    }
+
+    public void Controls()
+    {
+        audioManager.PlaySoundEffect(0);
+        panelControls.SetActive(true);
+    }
+    
+    public void CloseControls()
+    {
+        audioManager.PlaySoundEffect(0);
+        panelControls.SetActive(false);
     }
 
     public void SaveAndQuit()
